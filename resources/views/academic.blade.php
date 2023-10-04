@@ -62,7 +62,7 @@
                             <strong>310</strong>
                         </li>
                         <li class="plan-action">
-                            <a href="login/student/index.php" class="btn">Sign In</a>
+                            <a href="{{('/student/login')}}" class="btn">Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -95,7 +95,7 @@
                             <strong>310</strong>
                         </li>
                         <li class="plan-action">
-                            <a href="login/student/index.php" class="btn">Sign In</a>
+                            <a href="{{('/student/login')}}" class="btn">Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -128,7 +128,7 @@
                             <strong>310</strong>
                         </li>
                         <li class="plan-action">
-                            <a href="login/student/index.php" class="btn">Sign In</a>
+                            <a href="{{('/student/login')}}" class="btn">Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -161,7 +161,7 @@
                             <strong>310</strong>
                         </li>
                         <li class="plan-action">
-                            <a href="login/student/index.php" class="btn">Sign In</a>
+                            <a href="{{('/student/login')}}" class="btn">Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -194,7 +194,7 @@
                             <strong>310</strong>
                         </li>
                         <li class="plan-action">
-                            <a href="login/student/index.php" class="btn">Sign In</a>
+                            <a href="{{('/student/login')}}" class="btn">Sign In</a>
                         </li>
                     </ul>
                 </div>

@@ -48,7 +48,7 @@
                         <!--icon box top -->
                         <h4>About</h4>
 
-                        <p><a href="about.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('about' ) }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -61,7 +61,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Administrative</h4>
-                        <p><a href="administrative.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('administrative') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -73,7 +73,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Academic</h4>
-                        <p><a href="academic.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('academic') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -85,7 +85,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Opportunity</h4>
-                        <p><a href="opportunity.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('opportunity') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -100,7 +100,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Admission</h4>
-                        <p><a href="admission.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('admission') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -112,7 +112,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Function</h4>
-                        <p><a href="function.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('function') }}.php"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -124,7 +124,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Gallery</h4>
-                        <p><a href="gallery.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('gallery') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -136,7 +136,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Contact</h4>
-                        <p><a href="contact.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('contact') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -153,7 +153,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Notice</h4>
-                        <p><a href="notice.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('notice') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>
@@ -165,7 +165,7 @@
                         </div>
                         <!--icon box top -->
                         <h4>Important Link</h4>
-                        <p><a href="importantlink.php"><em>Read More</em></a></p>
+                        <p><a href="{{ ('importantlink') }}"><em>Read More</em></a></p>
                     </div>
                     <!--grey box -->
                 </div>

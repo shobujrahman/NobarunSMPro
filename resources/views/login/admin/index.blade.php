@@ -1,6 +1,8 @@
-<?php
-require '../../login_layout/header.php';
-?>
+
+{{-- require '../../login_layout/header.php'; --}}
+
+@extends('layouts.login_layout.layout')
+@section('content')
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
 						Admin Login
@@ -24,11 +26,11 @@ require '../../login_layout/header.php';
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							<a href="../../admin/dashboard/index.php">Login</a>
+							<a href="{{('/admin/dashboard')}}">Login</a>
 						</button>
 					</div>
 				</form>
+@endsection
 
-				<?php
-				require '../../login_layout/footer.php';
-				?>
+				{{-- require '../../login_layout/footer.php'; --}}
+
