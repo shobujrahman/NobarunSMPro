@@ -1,7 +1,8 @@
-<?php
-require '../../login_layout/header.php';
-?>
 
+{{-- require '../../login_layout/header.php'; --}}
+
+@extends('layouts.login_layout.layout')
+@section('content')
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
 						Student Login
@@ -29,6 +30,6 @@ require '../../login_layout/header.php';
 						</button>
 					</div>
 				</form>
-				<?php
-				require '../../login_layout/footer.php';
-				?>
+
+				{{-- require '../../login_layout/footer.php'; --}}
+@endsection

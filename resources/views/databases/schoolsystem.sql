@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2023 at 01:05 PM
+-- Generation Time: Oct 04, 2023 at 08:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `academic_user_view`
+--
+
+CREATE TABLE `academic_user_view` (
+  `academic_user_view_id` int(25) NOT NULL,
+  `academic_name` varchar(255) NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `routine` varchar(25) NOT NULL,
+  `text_book` varchar(255) NOT NULL,
+  `total_student` varchar(255) NOT NULL,
+  `male_student` varchar(255) NOT NULL,
+  `female_student` varchar(255) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `communication`
 --
 
@@ -31,7 +49,7 @@ CREATE TABLE `communication` (
   `communication_id` int(25) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` int(25) NOT NULL,
+  `contact` int(25) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
   `created_date` date NOT NULL DEFAULT current_timestamp()
@@ -78,7 +96,7 @@ CREATE TABLE `default_access` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `designation` varchar(255) NOT NULL,
-  `contact` varchar(255) NOT NULL,
+  `contact` int(25) NOT NULL,
   `email` varchar(255) NOT NULL,
   `street` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
@@ -119,6 +137,37 @@ CREATE TABLE `gallery_type_details` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `member_type`
+--
+
+CREATE TABLE `member_type` (
+  `member_type_id` int(25) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_type_details`
+--
+
+CREATE TABLE `member_type_details` (
+  `member_type_details_id` int(25) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `address` varchar(25) NOT NULL,
+  `contact` int(25) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `member_type_id` int(25) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `notice`
 --
 
@@ -132,6 +181,12 @@ CREATE TABLE `notice` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `academic_user_view`
+--
+ALTER TABLE `academic_user_view`
+  ADD PRIMARY KEY (`academic_user_view_id`);
 
 --
 -- Indexes for table `communication`
@@ -170,6 +225,18 @@ ALTER TABLE `gallery_type_details`
   ADD PRIMARY KEY (`gallery_type_details_id`);
 
 --
+-- Indexes for table `member_type`
+--
+ALTER TABLE `member_type`
+  ADD PRIMARY KEY (`member_type_id`);
+
+--
+-- Indexes for table `member_type_details`
+--
+ALTER TABLE `member_type_details`
+  ADD PRIMARY KEY (`member_type_details_id`);
+
+--
 -- Indexes for table `notice`
 --
 ALTER TABLE `notice`
@@ -178,6 +245,12 @@ ALTER TABLE `notice`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `academic_user_view`
+--
+ALTER TABLE `academic_user_view`
+  MODIFY `academic_user_view_id` int(25) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `communication`
@@ -214,6 +287,18 @@ ALTER TABLE `gallery_type`
 --
 ALTER TABLE `gallery_type_details`
   MODIFY `gallery_type_details_id` int(25) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `member_type`
+--
+ALTER TABLE `member_type`
+  MODIFY `member_type_id` int(25) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `member_type_details`
+--
+ALTER TABLE `member_type_details`
+  MODIFY `member_type_details_id` int(25) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `notice`

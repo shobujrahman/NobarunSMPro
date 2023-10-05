@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WebControllers\Login\HomeController as LoginHomeController;
+use App\Http\Controllers\WebControllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\WebControllers\Teachers\HomeController as TeachersHomeController;
 use App\Http\Controllers\WebControllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +29,16 @@ Route::get('/function', [HomeController::class, 'function']);
 Route::get('/gallery', [HomeController::class, 'gallery']);
 Route::get('/notice', [HomeController::class, 'notice']);
 Route::get('/importantlink', [HomeController::class, 'importantlink']);
+
+//login route
+Route::get('/admin/login', [LoginHomeController::class, 'adminLoginHome']);
+Route::get('/teacher/login', [LoginHomeController::class, 'teacherLoginHome']);
+Route::get('/student/login', [LoginHomeController::class, 'studentLoginHome']);
+
+//admin route
+Route::get('/admin/dashboard', [AdminHomeController::class, 'home']);
+Route::get('/admin/profile', [AdminHomeController::class, 'showprofile']);
+Route::get('/admin/editprofile', [AdminHomeController::class, 'editprofile']);
 
 //teacher route
 Route::get('/teacher/dashboard', [TeachersHomeController::class, 'home']);

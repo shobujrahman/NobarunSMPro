@@ -102,5 +102,5 @@
 <!-- /container -->
 
 
-// require 'user_layout/footer.php';
+{{-- // require 'user_layout/footer.php'; --}}
 @endsection

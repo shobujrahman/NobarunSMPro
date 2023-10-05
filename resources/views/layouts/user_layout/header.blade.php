@@ -58,9 +58,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access</a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{('login/admin/index.php')}}">Admin Access</a></li>
-                        <li><a href="{{('login/teacher/index.php')}}">Teacher Access</a></li>
-                        <li><a href="{{('login/student/index.php')}}">Student Access</a></li>
+                        <li><a href="{{('/admin/login')}}">Admin Access</a></li>
+                        <li><a href="{{('/teacher/login')}}">Teacher Access</a></li>
+                        <li><a href="{{('/student/login')}}">Student Access</a></li>
 
                     </ul>
                 </li>
