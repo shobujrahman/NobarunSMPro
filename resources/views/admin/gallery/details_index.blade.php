@@ -1,12 +1,13 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+@extends('layouts.admin_layout.layout')
+@section('content')
 
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                CONTENT MANAGEMENT
+                GALLERY MANAGEMENT
                 </h2>
             </div>
             <!-- #END# Basic Examples -->
@@ -16,32 +17,37 @@ require '../../admin_layout/header.php';
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Index View (About/Administrative/Academic/Admission/Opportunity/Function)
+                                Index View (Picture/Video)
                             </h2>
                             <ul class="header-dropdown m-r--6">
-                            <a href="../content/details_add.php" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
+                            <a href="{{ ('/admin/gallery/details_add') }}" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
                                     <i class="material-icons">add_task</i>
                                 </a>
                             </ul>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>Description</th>
+                                            <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    
+
+                                    <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Jenette Caldwell</td>
-                                            <td>Development Lead</td>
+
                                             <td>
-                                            <a href="../content/details_edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <img class="media-object" src="../../admin_assets/images/image-gallery/1.jpg" width="50" height="50">
+                                            </td>
+
+                                            <td>
+                                            <a href="{{ ('/admin/gallery/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
                                             <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
@@ -52,9 +58,13 @@ require '../../admin_layout/header.php';
                                         <tr>
                                             <td>2</td>
                                             <td>Yuri Berry</td>
-                                            <td>Chief Marketing Officer (CMO)</td>
+
                                             <td>
-                                            <a href="../content/details_edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <img class="media-object" src="../../admin_assets/images/image-gallery/2.jpg" width="50" height="50">
+                                            </td>
+
+                                            <td>
+                                            <a href="{{ ('/admin/gallery/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
                                             <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
@@ -65,9 +75,14 @@ require '../../admin_layout/header.php';
                                         <tr>
                                             <td>3</td>
                                             <td>Pre-Sales Support</td>
-                                            <td>New York</td>
+
+
                                             <td>
-                                            <a href="../content/details_edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <img class="media-object" src="../../admin_assets/images/image-gallery/3.jpg" width="50" height="50">
+                                            </td>
+
+                                            <td>
+                                            <a href="{{ ('/admin/gallery/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
                                             <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
@@ -75,7 +90,7 @@ require '../../admin_layout/header.php';
                                             </a>
                                             </td>
                                         </tr>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -88,7 +103,6 @@ require '../../admin_layout/header.php';
     </section>
 
 
-<?php
-require '../../admin_layout/footer.php';
-?>
-    
+    @endsection
+
+    {{-- require '../../admin_layout/footer.php'; --}}

@@ -1,6 +1,7 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+@extends('layouts.admin_layout.layout')
+@section('content')
 
     <section class="content">
         <div class="container-fluid">
@@ -19,7 +20,7 @@ require '../../admin_layout/header.php';
                                 Index View (Picture/Video)
                             </h2>
                             <ul class="header-dropdown m-r--6">
-                            <a href="../gallery/add.php" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
+                            <a href="{{ ('/admin/gallery/add') }}" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
                                     <i class="material-icons">add_task</i>
                                 </a>
                             </ul>
@@ -35,20 +36,20 @@ require '../../admin_layout/header.php';
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Photo</td>
 
                                             <td>
-                                            <a href="../gallery/details_index.php" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/gallery/details_index') }}" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">add</i>
                                             </a>
                                             </td>
 
                                             <td>
-                                            <a href="../gallery/edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/gallery/edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
                                             <!-- <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
@@ -61,13 +62,13 @@ require '../../admin_layout/header.php';
                                             <td>video</td>
 
                                             <td>
-                                            <a href="../gallery/details_index.php" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/gallery/details_index') }}" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">add</i>
                                             </a>
                                             </td>
-                                            
+
                                             <td>
-                                            <a href="../gallery/edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/gallery/edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
                                             <!-- <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
@@ -75,7 +76,7 @@ require '../../admin_layout/header.php';
                                             </a> -->
                                             </td>
                                         </tr>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -88,7 +89,6 @@ require '../../admin_layout/header.php';
     </section>
 
 
-<?php
-require '../../admin_layout/footer.php';
-?>
-    
+    @endsection
+
+    {{-- require '../../admin_layout/footer.php'; --}}

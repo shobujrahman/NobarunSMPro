@@ -173,7 +173,7 @@
                                     <span>Content</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li><a href="../content/index.php">Content Setup</a></li>
+                                    <li><a href="{{ ('/admin/content/index') }}">Content Setup</a></li>
 
                                 </ul>
                             </li>
@@ -184,7 +184,7 @@
                                     <span>Utile</span>
                                 </a>
                                 <ul class="ml-menu">
-                                  <li><a href="../utile/index.php">Notice</a></li>
+                                  <li><a href="{{ ('/admin/notice/index') }}">Notice</a></li>
 
                                 </ul>
                             </li>
@@ -195,7 +195,7 @@
                                     <span>Member</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li><a href="../member/index.php">Member Setup</a></li>
+                                    <li><a href="{{ ('/admin/member/index') }}">Member Setup</a></li>
 
                                 </ul>
                             </li>
@@ -206,7 +206,7 @@
                                     <span>Gallery</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li><a href="../gallery/index.php">Gallery Setup</a></li>
+                                    <li><a href="{{ ('/admin/gallery/index') }}">Gallery Setup</a></li>
 
                                 </ul>
                             </li>
@@ -217,13 +217,13 @@
                                     <span>Academic</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li><a href="../academic/userviewindex.php">user view Setup</a></li>
+                                    <li><a href="{{ ('/admin/academic/userviewindex') }}">user view Setup</a></li>
 
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="../communication/index.php">
+                                <a href="{{ ('/admin/communication/index') }}">
                                   <i class="material-icons">contact_mail</i>
                                     <span>Communication</span>
                                 </a>
