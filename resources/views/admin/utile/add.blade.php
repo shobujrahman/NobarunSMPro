@@ -1,11 +1,13 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+
+@extends('layouts.admin_layout.layout')
+@section('content')
 
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>CONTENT MANAGEMENT</h2>
+                <h2>UTILE MANAGEMENT</h2>
             </div>
 
             <!-- CKEditor -->
@@ -13,7 +15,7 @@ require '../../admin_layout/header.php';
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Add (About/Administrative/Academic/Admission/Opportunity/Function)</h2>
+                            <h2>Add (Notice/Important Link)</h2>
                         </div>
 
                         <div class="body">
@@ -32,21 +34,21 @@ require '../../admin_layout/header.php';
                                     </div>
                                 </div>
 
-                                <a href="../content/details_index.php" type="button" class="btn btn-danger waves-effect">Back</a>
+                                <a href="{{ ('/admin/notice/index') }}" type="button" class="btn btn-danger waves-effect">Back</a>
                                 <button type="submit" class="btn btn-success waves-effect">Save</button>
                             </div>
                         </form>
                         </div>
-                        
+
 
                     </div>
                 </div>
             </div>
             <!-- #END# CKEditor -->
-            
+
         </div>
     </section>
+@endsection
 
-<?php
-require '../../admin_layout/footer.php';
-?>
+{{-- require '../../admin_layout/footer.php'; --}}
+

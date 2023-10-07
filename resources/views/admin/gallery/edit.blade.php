@@ -1,6 +1,7 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+@extends('layouts.admin_layout.layout')
+@section('content')
 
 <section class="content">
         <div class="container-fluid">
@@ -19,38 +20,39 @@ require '../../admin_layout/header.php';
                         <div class="body">
                         <form action="/" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
                         <div class="row clearfix">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="name">Name</label>
-                                            <input type="text" class="form-control" value="Name" />
+                                            <input type="text" class="form-control" value="Name" required disabled/>
                                         </div>
                                     </div>
                                     </div>
-                                    
 
-                                <div class="col-sm-6">
+
+                                <!-- <div class="col-sm-6">
                                     <div class="form-group">
                                     <label >Image</label>
                                     <input type="file" class="form-control" />
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <a href="../gallery/details_index.php" type="button" class="btn btn-danger waves-effect">Back</a>
+                                <a href="{{ ('/admin/gallery/index') }}" type="button" class="btn btn-danger waves-effect">Back</a>
                                 <button type="submit" class="btn btn-success waves-effect">Update</button>
                             </div>
                         </form>
                         </div>
-                        
+
 
                     </div>
                 </div>
             </div>
             <!-- #END# CKEditor -->
-            
+
         </div>
     </section>
 
-<?php
-require '../../admin_layout/footer.php';
-?>
+
+    @endsection
+
+    {{-- require '../../admin_layout/footer.php'; --}}

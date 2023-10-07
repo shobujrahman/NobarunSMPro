@@ -1,6 +1,7 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+@extends('layouts.admin_layout.layout')
+@section('content')
 
     <section class="content">
         <div class="container-fluid">
@@ -19,66 +20,63 @@ require '../../admin_layout/header.php';
                                 Index View (About/Administrative/Academic/Admission/Opportunity/Function)
                             </h2>
                             <ul class="header-dropdown m-r--6">
-                            <a href="../content/add.php" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
+                            <a href="{{ ('/admin/content/details_add') }}" type="button" title="Add New" class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
                                     <i class="material-icons">add_task</i>
                                 </a>
                             </ul>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>Image</th>
-                                            <th>Add Details</th>
+                                            <th>Description</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                
-                                    <tbody>
+
                                         <tr>
                                             <td>1</td>
-                                            <td>About</td>
+                                            <td>Jenette Caldwell</td>
+                                            <td>Development Lead</td>
                                             <td>
-                                            <img class="media-object" src="../../admin_assets/images/image-gallery/1.jpg" width="50" height="50">
-                                            </td>
-                                            <td>
-                                            <a href="../content/details_index.php" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
-                                            <i class="material-icons">add</i>
-                                            </a>
-                                            </td>
-                                            <td>
-                                            <a href="../content/edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/content/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
-                                            <!-- <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                            <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">delete_forever</i>
-                                            </a> -->
+                                            </a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Administrative</td>
+                                            <td>Yuri Berry</td>
+                                            <td>Chief Marketing Officer (CMO)</td>
                                             <td>
-                                            <img class="media-object" src="../../admin_assets/images/image-gallery/1.jpg" width="50" height="50">
-                                            </td>
-                                            <td>
-                                            <a href="../content/details_index.php" type="button" title="Add" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
-                                            <i class="material-icons">add</i>
-                                            </a>
-                                            </td>
-                                            <td>
-                                            <a href="../content/edit.php" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <a href="{{ ('/admin/content/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">mode_edit</i>
                                             </a>
-                                            <!-- <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                            <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                             <i class="material-icons">delete_forever</i>
-                                            </a> -->
+                                            </a>
                                             </td>
                                         </tr>
-                                        
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Pre-Sales Support</td>
+                                            <td>New York</td>
+                                            <td>
+                                            <a href="{{ ('/admin/content/details_edit') }}" type="button" title="Edit" class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
+                                            <i class="material-icons">mode_edit</i>
+                                            </a>
+                                            <a href="javascript:void(0)" type="button" title="Delete" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                            <i class="material-icons">delete_forever</i>
+                                            </a>
+                                            </td>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -89,9 +87,8 @@ require '../../admin_layout/header.php';
             <!-- #END# Exportable Table -->
         </div>
     </section>
+@endsection
 
 
-<?php
-require '../../admin_layout/footer.php';
-?>
-    
+{{-- require '../../admin_layout/footer.php'; --}}
+

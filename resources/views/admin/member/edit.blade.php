@@ -1,6 +1,7 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+
+{{-- require '../../admin_layout/header.php'; --}}
+@extends('layouts.admin_layout.layout')
+@section('content')
 
 <section class="content">
         <div class="container-fluid">
@@ -13,51 +14,44 @@ require '../../admin_layout/header.php';
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Add (Committee/Governing Body/Heads of Institutions Received/Teacher Stuff)</h2>
+                            <h2>Edit (Committee/Governing Body/Heads of Institutions Received)</h2>
                         </div>
 
                         <div class="body">
                         <form action="/" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
                         <div class="row clearfix">
-                                <div class="col-sm-4">
+                        <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="name">Name</label>
-                                            <input type="text" class="form-control" placeholder="Name" />
+                                            <input type="text" class="form-control" value="Name" required disabled/>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                    <div class="form-group">
-                                    <div class="form-line">
-                                    <label >Designation</label>
-                                    <input type="text" class="form-control" placeholder="Designation" />
-                                    </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-sm-4">
+
+                                <!-- <div class="col-sm-6">
                                     <div class="form-group">
                                     <label >Image</label>
                                     <input type="file" class="form-control" />
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <a href="../member/index.php" type="button" class="btn btn-danger waves-effect">Back</a>
-                                <button type="submit" class="btn btn-success waves-effect">Save</button>
+                                <a href="{{ ('/admin/member/index') }}" type="button" class="btn btn-danger waves-effect">Back</a>
+                                <button type="submit" class="btn btn-success waves-effect">Update</button>
                             </div>
                         </form>
                         </div>
-                        
+
 
                     </div>
                 </div>
             </div>
             <!-- #END# CKEditor -->
-            
+
         </div>
     </section>
 
-<?php
-require '../../admin_layout/footer.php';
-?>
+    @endsection
+
+    {{-- require '../../admin_layout/footer.php'; --}}
