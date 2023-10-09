@@ -3,7 +3,6 @@
 use App\Http\Controllers\WebControllers\Admin\ContentController;
 use App\Http\Controllers\WebControllers\Admin\GalleryController;
 use App\Http\Controllers\WebControllers\Admin\HomeController;
-// use App\Http\Controllers\WebControllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\WebControllers\Admin\MemberController;
 use App\Http\Controllers\WebControllers\Admin\UtileController;
 use App\Http\Controllers\WebControllers\Auth\AuthController;
@@ -37,44 +36,52 @@ Route::get('/importantlink', [UserController::class, 'importantlink']);
 
 //Auth route
 Route::get('/admin/login', [AuthController::class, 'adminLoginForm']);
+Route::post('/admin/admin-login', [AuthController::class, 'adminLogin']);
+Route::get('/admin/admin-logout', [AuthController::class, 'adminLogout']);
 Route::get('/teacher/login', [AuthController::class, 'teacherLoginForm']);
 Route::get('/student/login', [AuthController::class, 'studentLoginForm']);
 
-//admin route
-Route::get('/admin/dashboard', [HomeController::class, 'home']);
-Route::get('/admin/profile', [HomeController::class, 'showprofile']);
-Route::get('/admin/editprofile', [HomeController::class, 'editprofile']);
+Route::middleware(['admin'])->group(function () {
+    Route::get('admin/dashboard', [HomeController::class, 'home']);
+    Route::get('admin/profile', [HomeController::class, 'showprofile']);
+    Route::get('admin/editprofile', [HomeController::class, 'editprofile']);
+    //content route
+    Route::get('/admin/content/index', [ContentController::class, 'index']);
+    Route::get('/admin/content/add', [ContentController::class, 'add']);
+    Route::post('/admin/content/store', [ContentController::class, 'contentStore']);
+    Route::get('/admin/content/edit/{id}', [ContentController::class, 'edit']);
+    Route::post('/admin/content/update/{id}', [ContentController::class, 'contentUpdate']);
+    //content details route
+    Route::get('/admin/content/details_index/{id}', [ContentController::class, 'detailsIndex']);
+    Route::get('/admin/content/{id}/details_add', [ContentController::class, 'detailsAdd']);
+    Route::post('/admin/content/details_store/{id}', [ContentController::class, 'contentDetailsStore']);
+    Route::get('/admin/content/{cid}/details_edit/{id}', [ContentController::class, 'detailsedit']);
+    Route::post('/admin/content/details_update/{cid}/{id}', [ContentController::class, 'contentDetailsUpdate']);
 
-Route::get('/admin/content/index', [ContentController::class, 'index']);
-Route::get('/admin/content/add', [ContentController::class, 'add']);
-Route::get('/admin/content/edit', [ContentController::class, 'edit']);
-Route::get('/admin/content/details_index', [ContentController::class, 'detailsindex']);
-Route::get('/admin/content/details_add', [ContentController::class, 'detailsadd']);
-Route::get('/admin/content/details_edit', [ContentController::class, 'detailsedit']);
+    Route::get('/admin/notice/index', [UtileController::class, 'noticeindex']);
+    Route::get('/admin/notice/add', [UtileController::class, 'noticeadd']);
+    Route::get('/admin/notice/edit', [UtileController::class, 'noticeedit']);
 
-Route::get('/admin/notice/index', [UtileController::class, 'noticeindex']);
-Route::get('/admin/notice/add', [UtileController::class, 'noticeadd']);
-Route::get('/admin/notice/edit', [UtileController::class, 'noticeedit']);
+    Route::get('/admin/communication/index', [UtileController::class, 'communicationindex']);
 
-Route::get('/admin/communication/index', [UtileController::class, 'communicationindex']);
+    Route::get('/admin/academic/userviewindex', [UtileController::class, 'academicuserviewindex']);
+    Route::get('/admin/academic/userviewadd', [UtileController::class, 'academicuserviewadd']);
+    Route::get('/admin/academic/userviewedit', [UtileController::class, 'academicuserviewedit']);
 
-Route::get('/admin/academic/userviewindex', [UtileController::class, 'academicuserviewindex']);
-Route::get('/admin/academic/userviewadd', [UtileController::class, 'academicuserviewadd']);
-Route::get('/admin/academic/userviewedit', [UtileController::class, 'academicuserviewedit']);
+    Route::get('/admin/member/index', [MemberController::class, 'index']);
+    Route::get('/admin/member/add', [MemberController::class, 'add']);
+    Route::get('/admin/member/edit', [MemberController::class, 'edit']);
+    Route::get('/admin/member/details_index', [MemberController::class, 'detailsindex']);
+    Route::get('/admin/member/details_add', [MemberController::class, 'detailsadd']);
+    Route::get('/admin/member/details_edit', [MemberController::class, 'detailsedit']);
 
-Route::get('/admin/member/index', [MemberController::class, 'index']);
-Route::get('/admin/member/add', [MemberController::class, 'add']);
-Route::get('/admin/member/edit', [MemberController::class, 'edit']);
-Route::get('/admin/member/details_index', [MemberController::class, 'detailsindex']);
-Route::get('/admin/member/details_add', [MemberController::class, 'detailsadd']);
-Route::get('/admin/member/details_edit', [MemberController::class, 'detailsedit']);
-
-Route::get('/admin/gallery/index', [GalleryController::class, 'index']);
-Route::get('/admin/gallery/add', [GalleryController::class, 'add']);
-Route::get('/admin/gallery/edit', [GalleryController::class, 'edit']);
-Route::get('/admin/gallery/details_index', [GalleryController::class, 'detailsindex']);
-Route::get('/admin/gallery/details_add', [GalleryController::class, 'detailsadd']);
-Route::get('/admin/gallery/details_edit', [GalleryController::class, 'detailsedit']);
+    Route::get('/admin/gallery/index', [GalleryController::class, 'index']);
+    Route::get('/admin/gallery/add', [GalleryController::class, 'add']);
+    Route::get('/admin/gallery/edit', [GalleryController::class, 'edit']);
+    Route::get('/admin/gallery/details_index', [GalleryController::class, 'detailsindex']);
+    Route::get('/admin/gallery/details_add', [GalleryController::class, 'detailsadd']);
+    Route::get('/admin/gallery/details_edit', [GalleryController::class, 'detailsedit']);
+});
 
 //teacher route
 Route::get('/teacher/dashboard', [TeachersController::class, 'home']);
