@@ -4,7 +4,7 @@ namespace App\Http\Controllers\WebControllers\User;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     public function home()
     {
