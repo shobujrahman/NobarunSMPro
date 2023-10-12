@@ -1,4 +1,3 @@
-{{-- require '../../admin_layout/header.php'; --}}
 @extends('layouts.admin_layout.layout')
 @section('content')
 
@@ -6,7 +5,7 @@
     <div class="container-fluid">
         <div class="block-header">
             <h2>
-                GALLERY MANAGEMENT
+                Academic MANAGEMENT
             </h2>
         </div>
         <!-- #END# Basic Examples -->
@@ -16,11 +15,10 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index View (Picture/Video)
+                            Index View (user view)
                         </h2>
                         <ul class="header-dropdown m-r--6">
-                            <a href="{{ ('/admin/gallery/'.$gallery->id.'/details_add') }}" type="button"
-                                title="Add New"
+                            <a href="{{ url('/admin/academic/userviewadd') }}" type="button" title="Add New"
                                 class="btn bg-green btn-circle-lg waves-effect waves-circle waves-float">
                                 <i class="material-icons">add_task</i>
                             </a>
@@ -32,32 +30,35 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Image</th>
+                                        <th>Academic Name</th>
+                                        <th>Total Section</th>
+                                        <th>Routine</th>
+                                        <th>Text Book</th>
+                                        <th>Total Student</th>
+                                        <th>Male Student</th>
+                                        <th>Female Student</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    @foreach($gallery_details as $gallery_detail)
+                                    @foreach ($academic_user_view as $academic)
                                     <tr>
                                         <td>{{$no++}}</td>
-                                        <td>{{$gallery_detail->title}}</td>
-
+                                        <td>{{$academic->academic_name}}</td>
+                                        <td>{{$academic->section}}</td>
+                                        <td>{{$academic->routine}}</td>
+                                        <td>{{$academic->text_book}}</td>
+                                        <td>{{$academic->total_student}}</td>
+                                        <td>{{$academic->male_student}}</td>
+                                        <td>{{$academic->female_student}}</td>
                                         <td>
-                                            <img class="media-object"
-                                                src="{{asset('images/gallery-images/'.$gallery_detail->image)}}"
-                                                width="50" height="50">
-                                        </td>
-
-                                        <td>
-
-                                            <a href="{{ ('/admin/gallery/' . $gallery->id . '/details_edit/' . $gallery_detail->id) }}"
+                                            <a href="{{ url('/admin/academic/userviewedit/'. $academic->id) }}"
                                                 type="button" title="Edit"
                                                 class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">mode_edit</i>
                                             </a>
-                                            <a href="{{url('/admin/gallery/details_delete/'.$gallery_detail->id)}}"
+                                            <a href="{{url('/admin/academic/userviewdelete/'.$academic->id)}}"
                                                 type="button" title="Delete"
                                                 class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">delete_forever</i>
@@ -65,7 +66,6 @@
                                         </td>
                                     </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </div>
@@ -76,8 +76,4 @@
         <!-- #END# Exportable Table -->
     </div>
 </section>
-
-
 @endsection
-
-{{-- require '../../admin_layout/footer.php'; --}}

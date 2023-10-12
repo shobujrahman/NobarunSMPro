@@ -58,29 +58,49 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/content/{cid}/details_edit/{id}', [ContentController::class, 'detailsedit']);
     Route::post('/admin/content/details_update/{cid}/{id}', [ContentController::class, 'contentDetailsUpdate']);
 
-    Route::get('/admin/notice/index', [UtileController::class, 'noticeindex']);
-    Route::get('/admin/notice/add', [UtileController::class, 'noticeadd']);
-    Route::get('/admin/notice/edit', [UtileController::class, 'noticeedit']);
+    //utile notice route
+    Route::get('/admin/notice/index', [UtileController::class, 'noticeIndex']);
+    Route::get('/admin/notice/add', [UtileController::class, 'noticeAdd']);
+    Route::post('/admin/notice/store', [UtileController::class, 'noticeStore']);
+    Route::get('/admin/notice/edit/{id}', [UtileController::class, 'noticeEdit']);
+    Route::post('/admin/notice/update/{id}', [UtileController::class, 'noticeUpdate']);
+    //deleteNotice
+    Route::get('/admin/notice/delete/{id}', [UtileController::class, 'deleteNotice']);
 
     Route::get('/admin/communication/index', [UtileController::class, 'communicationindex']);
 
-    Route::get('/admin/academic/userviewindex', [UtileController::class, 'academicuserviewindex']);
-    Route::get('/admin/academic/userviewadd', [UtileController::class, 'academicuserviewadd']);
-    Route::get('/admin/academic/userviewedit', [UtileController::class, 'academicuserviewedit']);
-
+    Route::get('/admin/academic/userviewindex', [UtileController::class, 'academicUserViewIndex']);
+    Route::get('/admin/academic/userviewadd', [UtileController::class, 'academicUserViewAdd']);
+    Route::post('/admin/academic/userviewstore', [UtileController::class, 'academicUserViewStore']);
+    Route::get('/admin/academic/userviewedit/{id}', [UtileController::class, 'academicUserViewEdit']);
+    Route::post('/admin/academic/userviewupdate/{id}', [UtileController::class, 'academicUserViewUpdate']);
+    Route::get('/admin/academic/userviewdelete/{id}', [UtileController::class, 'academicUserViewDelete']);
+    //member_type route
     Route::get('/admin/member/index', [MemberController::class, 'index']);
     Route::get('/admin/member/add', [MemberController::class, 'add']);
-    Route::get('/admin/member/edit', [MemberController::class, 'edit']);
-    Route::get('/admin/member/details_index', [MemberController::class, 'detailsindex']);
-    Route::get('/admin/member/details_add', [MemberController::class, 'detailsadd']);
-    Route::get('/admin/member/details_edit', [MemberController::class, 'detailsedit']);
-
+    Route::post('/admin/member/store', [MemberController::class, 'store']);
+    Route::get('/admin/member/edit/{id}', [MemberController::class, 'edit']);
+    Route::post('/admin/member/update/{id}', [MemberController::class, 'update']);
+    //member details route
+    Route::get('/admin/member/{mid}/details_index', [MemberController::class, 'detailsIndex']);
+    Route::get('/admin/member/{mid}/details_add', [MemberController::class, 'detailsAdd']);
+    Route::post('/admin/member/details_store/{mid}', [MemberController::class, 'detailsStore']);
+    Route::get('/admin/member/{mid}/details_edit/{mdId}', [MemberController::class, 'detailsEdit']);
+    Route::post('/admin/member/details_update/{mid}/{mdId}', [MemberController::class, 'detailsUpdate']);
+    Route::get('/admin/member/details_delete/{mdId}', [MemberController::class, 'detailsDelete']);
+    //gallery type route
     Route::get('/admin/gallery/index', [GalleryController::class, 'index']);
     Route::get('/admin/gallery/add', [GalleryController::class, 'add']);
-    Route::get('/admin/gallery/edit', [GalleryController::class, 'edit']);
-    Route::get('/admin/gallery/details_index', [GalleryController::class, 'detailsindex']);
-    Route::get('/admin/gallery/details_add', [GalleryController::class, 'detailsadd']);
-    Route::get('/admin/gallery/details_edit', [GalleryController::class, 'detailsedit']);
+    Route::post('/admin/gallery/store', [GalleryController::class, 'store']);
+    Route::get('/admin/gallery/edit/{gid}', [GalleryController::class, 'edit']);
+    Route::post('/admin/gallery/update/{gid}', [GalleryController::class, 'update']);
+    //gallery details route
+    Route::get('/admin/gallery/{gid}/details_index', [GalleryController::class, 'detailsIndex']);
+    Route::get('/admin/gallery/{gid}/details_add', [GalleryController::class, 'detailsAdd']);
+    Route::post('/admin/gallery/{gid}/details_store', [GalleryController::class, 'detailsStore']);
+    Route::get('/admin/gallery/{gid}/details_edit/{gdId}', [GalleryController::class, 'detailsEdit']);
+    Route::post('/admin/gallery/{gid}/details_update/{gdId}', [GalleryController::class, 'detailsUpdate']);
+    Route::get('/admin/gallery/details_delete/{gdId}', [GalleryController::class, 'detailsDelete']);
 });
 
 //teacher route
