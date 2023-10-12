@@ -5,7 +5,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>MEMBER MANAGEMENT</h2>
+            <h2>Academic MANAGEMENT</h2>
         </div>
 
         <!-- CKEditor -->
@@ -13,88 +13,88 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Add (Committee/Governing Body/Heads of Institutions Received/Teacher Stuff)</h2>
+                        <h2>Add (Academic User View)</h2>
                     </div>
 
                     <div class="body">
-                        <form action="{{url('/admin/member/details_store/'.$member_type->id)}}" id="frmFileUpload"
-                            class="" method="post" enctype="multipart/form-data">@csrf
+                        <form action="{{url('/admin/academic/userviewstore')}}" id="frmFileUpload" class=""
+                            method="post" enctype="multipart/form-data">@csrf
                             <div class="row clearfix">
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="name">Name</label>
-                                            <input name="name" type="text" class="form-control" placeholder="Name" />
+                                            <label for="name">Academic Name</label>
+                                            <input name="academic_name" type="text" class="form-control"
+                                                placeholder="class 6" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label>Designation</label>
-                                            <input name="designation" type="text" class="form-control"
-                                                placeholder="Designation" />
+                                            <label for="section">Total Section</label>
+                                            <input name="section" type="text" class="form-control" placeholder="3" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label>Address</label>
-                                            <input name="address" type="text" class="form-control"
-                                                placeholder="Collage Road" />
+                                            <label for="routine">Routine</label>
+                                            <input name="routine" type="text" class="form-control" placeholder="3" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label>Contact</label>
-                                            <input name="contact" type="number" class="form-control"
-                                                placeholder="0174.**.0*" />
+                                            <label for="textbook">Text Book</label>
+                                            <input name="text_book" type="text" class="form-control" placeholder="15" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label>E-mail</label>
-                                            <input name="email" type="email" class="form-control"
-                                                placeholder="member@gmail.com" />
+                                            <label for="tstudent">Total Student</label>
+                                            <input name="total_student" type="text" class="form-control"
+                                                placeholder="300" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Image</label>
-                                        <input name="image" type="file" class="form-control" />
+                                        <div class="form-line">
+                                            <label for="mstudent">Male Student</label>
+                                            <input name="male_student" type="text" class="form-control"
+                                                placeholder="230" />
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-12">
-                                    <label for="InputDescription" class="col-sm-2 control-label">Description</label>
-
-                                    <div class="col-sm-12">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
                                         <div class="form-line">
-                                            <textarea name="description" class="ckeditor" name="InputDescription">
-
-                                            </textarea>
+                                            <label for="festudent">Female Student</label>
+                                            <input name="female_student" type="text" class="form-control"
+                                                placeholder="70" />
                                         </div>
                                     </div>
                                 </div>
 
-                                <a href="{{ ('/admin/member/details_index') }}" type="button"
-                                    class="btn btn-danger waves-effect">Back</a>
-                                <button type="submit" class="btn btn-success waves-effect">Save</button>
                             </div>
-                        </form>
+
+                            <a href="{{ ('/admin/academic/userviewindex') }}" type="button"
+                                class="btn btn-danger waves-effect">Back</a>
+                            <button type="submit" class="btn btn-success waves-effect">Save</button>
                     </div>
-
-
+                    </form>
                 </div>
+
+
             </div>
         </div>
-        <!-- #END# CKEditor -->
+    </div>
+    <!-- #END# CKEditor -->
 
     </div>
 </section>

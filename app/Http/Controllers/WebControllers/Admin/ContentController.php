@@ -139,7 +139,7 @@ class ContentController extends Controller
         $this->validate($request, $rules);
 
         $content = ContentManagement::find($cid);
-        $contentDetails = ContentManagementDetails::find($id);
+        $contentDetails = ContentManagementDetails::where('content_management_id', $content->id)->find($id);
         $contentDetails->title = $request->input('title');
         $contentDetails->description = $request->input('description');
         $contentDetails->update();
