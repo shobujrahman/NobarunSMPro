@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index View (Committee/Governing Body/Heads of Institutions Received/Teacher Stuff)
+                            Index Details View
                         </h2>
 
                         <ul class="header-dropdown m-r--6">

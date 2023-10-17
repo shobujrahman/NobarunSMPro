@@ -13,7 +13,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Add (Committee/Governing Body/Heads of Institutions Received)</h2>
+                        <h2>Add View</h2>
                     </div>
 
                     <div class="body">

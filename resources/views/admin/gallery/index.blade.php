@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index View (Picture/Video)
+                            Index View
                         </h2>
                         <ul class="header-dropdown m-r--6">
                             <a href="{{ ('/admin/gallery/add') }}" type="button" title="Add New"
