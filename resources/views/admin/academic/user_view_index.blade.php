@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index View (user view)
+                            Index View
                         </h2>
                         <ul class="header-dropdown m-r--6">
                             <a href="{{ url('/admin/academic/userviewadd') }}" type="button" title="Add New"

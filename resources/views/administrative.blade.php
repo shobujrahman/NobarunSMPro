@@ -308,6 +308,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h3 class="modal-title">Larry Doc</h3>
           <h4 class="modal-title">Headmaster</h4>
+          <h6 class="modal-title">Attanibazer</h6>
           <h6 class="modal-title">0174...4554...</h6>
           <h6 class="modal-title">headmaster.info@gmail.com</h6>
         </div>

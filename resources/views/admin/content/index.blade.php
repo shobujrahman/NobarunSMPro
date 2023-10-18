@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index View (About/Administrative/Academic/Admission/Opportunity/Function)
+                            Index View
                         </h2>
                         <ul class="header-dropdown m-r--6">
                             <a href="{{ ('/admin/content/add') }}" type="button" title="Add New"
