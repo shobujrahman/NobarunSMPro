@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\Admin;
+namespace App\Http\Controllers\AdminPanelControllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -14,7 +14,8 @@ class HomeController extends Controller
 
     public function showprofile()
     {
-        return view('admin.profile.index');
+        $adminProfile = User::where('role', 1)->first();
+        return view('admin.profile.index', compact('adminProfile'));
     }
 
     public function editprofile()

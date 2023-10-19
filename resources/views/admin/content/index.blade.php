@@ -51,8 +51,8 @@
                                         </td>
 
                                         <td>
-                                            <a href="{{ ('/admin/content/details_index/'.$content->id) }}" type="button"
-                                                title="Add"
+                                            <a href="{{ ('/admin/content/'.$content->id.'/details_index') }}"
+                                                type="button" title="Add"
                                                 class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">add</i>
                                             </a>

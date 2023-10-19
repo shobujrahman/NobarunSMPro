@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\Admin;
+namespace App\Http\Controllers\AdminPanelControllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\MemberDetails;
@@ -75,7 +75,7 @@ class MemberController extends Controller
         }
         // dd($member_details->member_type_id = $request->route('mid'));
         $member_details->save();
-        return redirect('/admin/member/details_index/' . $member_type->id)->with('message', 'Member Details Added Successfully');
+        return redirect('/admin/member/' . $member_type->id . '/details_index')->with('message', 'Member Details Added Successfully');
     }
 
     public function detailsEdit($mid, $mdId)
@@ -116,10 +116,11 @@ class MemberController extends Controller
         return redirect('/admin/member/' . $member_type->id . '/details_index')->with('message', 'Member Details Updated Successfully');
     }
 
-    public function detailsDelete($mdId)
+    public function detailsDelete($mid, $mdId)
     {
-        $member_details = MemberDetails::find($mdId);
+        $member_type = MemberType::find($mid);
+        $member_details = MemberDetails::where('member_type_id', $member_type->id)->find($mdId);
         $member_details->delete();
-        return redirect('/admin/member/index')->with('message', 'Member Type Deleted Successfully');
+        return redirect('/admin/member/' . $member_type->id . '/details_index')->with('message', 'Member Type Deleted Successfully');
     }
 }

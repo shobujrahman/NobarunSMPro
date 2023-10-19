@@ -43,12 +43,13 @@
                                         <td>{{$details->title}}</td>
                                         <td>{{strip_tags($details->description)}}</td>
                                         <td>
-                                            <a href="{{ url('/admin/content/' . $details->id . '/details_edit/' . $content->id) }}"
+                                            <a href="{{ url('/admin/content/' . $content->id . '/details_edit/' . $details->id) }}"
                                                 type="button" title="Edit"
                                                 class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">mode_edit</i>
                                             </a>
-                                            <a href="javascript:void(0)" type="button" title="Delete"
+                                            <a href="{{url('/admin/content/'. $content->id .'/details_delete/'.$details->id)}}"
+                                                type="button" title="Delete"
                                                 class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">delete_forever</i>
                                             </a>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\Teachers;
+namespace App\Http\Controllers\AdminPanelControllers\Teachers;
 
 use App\Http\Controllers\Controller;
 

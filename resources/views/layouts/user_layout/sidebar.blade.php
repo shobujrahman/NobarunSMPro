@@ -6,6 +6,12 @@
 <!--*/-->
 
 
+@php
+$academicUserView = \App\Models\AcademicUserView::get();
+$totalStudent = $academicUserView->sum('total_student');
+$totalMaleStudent = $academicUserView->sum('male_student');
+$totalFemaleStudent = $academicUserView->sum('female_student');
+@endphp
 <!-- Sidebar -->
 <aside class="sidebar sidebar-right">
 
@@ -39,15 +45,15 @@
 
                         <li>
                             <h4>Total Student</h4>
-                            <strong>30000</strong>
+                            <strong>{{$totalStudent}}</strong>
                         </li>
                         <li>
                             <h4>Total Male Student</h4>
-                            <strong>20500</strong>
+                            <strong>{{$totalMaleStudent}}</strong>
                         </li>
                         <li>
                             <h4>Total female Student</h4>
-                            <strong>10500</strong>
+                            <strong>{{$totalFemaleStudent}}</strong>
                         </li>
                     </ul>
                 </div>
