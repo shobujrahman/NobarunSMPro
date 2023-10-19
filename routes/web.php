@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\WebControllers\Admin\ContentController;
-use App\Http\Controllers\WebControllers\Admin\GalleryController;
-use App\Http\Controllers\WebControllers\Admin\HomeController;
-use App\Http\Controllers\WebControllers\Admin\MemberController;
-use App\Http\Controllers\WebControllers\Admin\UtileController;
-use App\Http\Controllers\WebControllers\Auth\AuthController;
-use App\Http\Controllers\WebControllers\Teachers\TeachersController;
-use App\Http\Controllers\WebControllers\User\UserController;
+use App\Http\Controllers\AdminPanelControllers\Admin\ContentController;
+use App\Http\Controllers\AdminPanelControllers\Admin\GalleryController;
+use App\Http\Controllers\AdminPanelControllers\Admin\HomeController;
+use App\Http\Controllers\AdminPanelControllers\Admin\MemberController;
+use App\Http\Controllers\AdminPanelControllers\Admin\UtileController;
+use App\Http\Controllers\AdminPanelControllers\Auth\AuthController;
+use App\Http\Controllers\AdminPanelControllers\Teachers\TeachersController;
+use App\Http\Controllers\AdminPanelControllers\User\UserController;
+use App\Http\Controllers\WebsiteControllers\HomeController as WebsiteControllersHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 //  users route
-Route::get('/', [UserController::class, 'home']);
+Route::get('/', [WebsiteControllersHomeController::class, 'home']);
 Route::get('/about', [UserController::class, 'aboutUs']);
 Route::get('/contact', [UserController::class, 'contactUs']);
 Route::get('/administrative', [UserController::class, 'administrative']);
@@ -52,12 +53,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/content/edit/{id}', [ContentController::class, 'edit']);
     Route::post('/admin/content/update/{id}', [ContentController::class, 'contentUpdate']);
     //content details route
-    Route::get('/admin/content/details_index/{id}', [ContentController::class, 'detailsIndex']);
+    Route::get('/admin/content/{id}/details_index', [ContentController::class, 'detailsIndex']);
     Route::get('/admin/content/{id}/details_add', [ContentController::class, 'detailsAdd']);
     Route::post('/admin/content/details_store/{id}', [ContentController::class, 'contentDetailsStore']);
     Route::get('/admin/content/{cid}/details_edit/{id}', [ContentController::class, 'detailsedit']);
     Route::post('/admin/content/details_update/{cid}/{id}', [ContentController::class, 'contentDetailsUpdate']);
-
+    Route::get('/admin/content/{cid}/details_delete/{id}', [ContentController::class, 'contentDetailsDelete']);
     //utile notice route
     Route::get('/admin/notice/index', [UtileController::class, 'noticeIndex']);
     Route::get('/admin/notice/add', [UtileController::class, 'noticeAdd']);
@@ -87,7 +88,7 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/admin/member/details_store/{mid}', [MemberController::class, 'detailsStore']);
     Route::get('/admin/member/{mid}/details_edit/{mdId}', [MemberController::class, 'detailsEdit']);
     Route::post('/admin/member/details_update/{mid}/{mdId}', [MemberController::class, 'detailsUpdate']);
-    Route::get('/admin/member/details_delete/{mdId}', [MemberController::class, 'detailsDelete']);
+    Route::get('/admin/member/{mid}/details_delete/{mdId}', [MemberController::class, 'detailsDelete']);
     //gallery type route
     Route::get('/admin/gallery/index', [GalleryController::class, 'index']);
     Route::get('/admin/gallery/add', [GalleryController::class, 'add']);

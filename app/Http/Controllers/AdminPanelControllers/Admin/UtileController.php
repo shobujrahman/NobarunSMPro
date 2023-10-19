@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\Admin;
+namespace App\Http\Controllers\AdminPanelControllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AcademicUserView;

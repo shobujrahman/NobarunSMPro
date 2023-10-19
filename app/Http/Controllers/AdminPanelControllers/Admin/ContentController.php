@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\Admin;
+namespace App\Http\Controllers\AdminPanelControllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContentManagement;
@@ -118,7 +118,7 @@ class ContentController extends Controller
 
         // dd($contentDetails->content_management_id = $request->route('id'));
         $contentDetails->save();
-        return redirect('/admin/content/details_index/' . $content->id)->with('success', 'Content added successfully.');
+        return redirect('/admin/content/' . $content->id . '/details_index')->with('success', 'Content added successfully.');
     }
 
     public function detailsedit($cid, $id)
@@ -144,7 +144,16 @@ class ContentController extends Controller
         $contentDetails->description = $request->input('description');
         $contentDetails->update();
 
-        return redirect('/admin/content/details_index/' . $content->id)->with('message', 'Content updated successfully!');
+        return redirect('/admin/content/' . $content->id . '/details_index')->with('message', 'Content updated successfully!');
 
+    }
+
+    //delete content details
+    public function contentDetailsDelete($cid, $id)
+    {
+        $content = ContentManagement::find($cid);
+        $contentDetails = ContentManagementDetails::where('content_management_id', $content->id)->find($id);
+        $contentDetails->delete();
+        return redirect('/admin/content/' . $content->id . '/details_index')->with('message', 'Content deleted successfully!');
     }
 }

@@ -69,7 +69,7 @@
                                                 class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">mode_edit</i>
                                             </a>
-                                            <a href="{{url('/admin/member/details_delete/'.$member_detail->id)}}"
+                                            <a href="{{url('/admin/member/'.$member_type->id.'/details_delete/'.$member_detail->id)}}"
                                                 type="button" title="Delete"
                                                 class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">delete_forever</i>

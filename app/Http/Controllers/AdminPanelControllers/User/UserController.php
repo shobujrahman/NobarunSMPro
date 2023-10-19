@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\WebControllers\User;
+namespace App\Http\Controllers\AdminPanelControllers\User;
 
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function home()
-    {
-        return view('index');
-    }
+    // public function home()
+    // {
+    //     return view('index');
+    // }
 
     public function aboutUs()
     {
