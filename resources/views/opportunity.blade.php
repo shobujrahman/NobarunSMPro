@@ -7,7 +7,10 @@
 @extends('layouts.user_layout.layout')
 @section('content')
 <!-- require 'user_layout/header.php'; -->
-
+@php
+$opprtunityDetailsArray = $opprtunityDetails->toArray(); // Convert the Eloquent Collection to a PHP array
+$chunks = array_chunk($opprtunityDetailsArray, 2); // Split the array into chunks of 2 elements each
+@endphp
 <header id="head" class="secondary">
     <div class="container">
         <h1>Opportunity</h1>
@@ -27,27 +30,23 @@
         <div id="courses">
             <section class="container">
                 <h3>Our Opportunity</h3>
+                @foreach ($chunks as $chunk)
                 <div class="row">
+                    @foreach ($chunk as $opprtunityDetail)
                     <div class="col-md-6">
                         <div class="featured-box">
                             <div class="text">
-                                <h3>Multimedia Classroom</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
+                                <h3>{{$opprtunityDetail['title']}}</h3>
+                                <p>
+                                    {!! $opprtunityDetail['description'] !!}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Computer Lab</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="row">
+                @endforeach
+                <!-- <div class="row">
                     <div class="col-md-6">
                         <div class="featured-box">
                             <div class="text">
@@ -78,14 +77,14 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <!-- <div class="featured-box">
+                        <div class="featured-box">
                         <div class="text">
                           <h3>Primary Treatment</h3>
                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </div>
-                      </div> -->
+                      </div>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
         <!-- /main -->

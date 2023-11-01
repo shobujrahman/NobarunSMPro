@@ -7,8 +7,17 @@ use App\Http\Controllers\AdminPanelControllers\Admin\MemberController;
 use App\Http\Controllers\AdminPanelControllers\Admin\UtileController;
 use App\Http\Controllers\AdminPanelControllers\Auth\AuthController;
 use App\Http\Controllers\AdminPanelControllers\Teachers\TeachersController;
-use App\Http\Controllers\AdminPanelControllers\User\UserController;
+use App\Http\Controllers\WebsiteControllers\AboutController;
+use App\Http\Controllers\WebsiteControllers\AcademicController;
+use App\Http\Controllers\WebsiteControllers\AdministrativeController;
+use App\Http\Controllers\WebsiteControllers\AdmissionController;
+use App\Http\Controllers\WebsiteControllers\ContactController;
+use App\Http\Controllers\WebsiteControllers\FunctionController;
+use App\Http\Controllers\WebsiteControllers\GalleryController as WebsiteControllersGalleryController;
 use App\Http\Controllers\WebsiteControllers\HomeController as WebsiteControllersHomeController;
+use App\Http\Controllers\WebsiteControllers\ImportantlinkController;
+use App\Http\Controllers\WebsiteControllers\NoticeController;
+use App\Http\Controllers\WebsiteControllers\OpportunityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,17 +32,18 @@ use Illuminate\Support\Facades\Route;
  */
 
 //  users route
+
 Route::get('/', [WebsiteControllersHomeController::class, 'home']);
-Route::get('/about', [UserController::class, 'aboutUs']);
-Route::get('/contact', [UserController::class, 'contactUs']);
-Route::get('/administrative', [UserController::class, 'administrative']);
-Route::get('/academic', [UserController::class, 'academic']);
-Route::get('/opportunity', [UserController::class, 'opportunity']);
-Route::get('/admission', [UserController::class, 'admission']);
-Route::get('/function', [UserController::class, 'function']);
-Route::get('/gallery', [UserController::class, 'gallery']);
-Route::get('/notice', [UserController::class, 'notice']);
-Route::get('/importantlink', [UserController::class, 'importantlink']);
+Route::get('/about', [AboutController::class, 'aboutUs']);
+Route::get('/contact', [ContactController::class, 'contactUs']);
+Route::get('/administrative', [AdministrativeController::class, 'administrative']);
+Route::get('/academic', [AcademicController::class, 'academic']);
+Route::get('/opportunity', [OpportunityController::class, 'opportunity']);
+Route::get('/admission', [AdmissionController::class, 'admission']);
+Route::get('/function', [FunctionController::class, 'function']);
+Route::get('/gallery', [WebsiteControllersGalleryController::class, 'gallery']);
+Route::get('/notice', [NoticeController::class, 'notice']);
+Route::get('/importantlink', [ImportantlinkController::class, 'importantlink']);
 
 //Auth route
 Route::get('/admin/login', [AuthController::class, 'adminLoginForm']);

@@ -4,11 +4,10 @@ namespace App\Http\Controllers\WebsiteControllers;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class GalleryController extends Controller
 {
-    public function home()
+    public function gallery()
     {
-        return view('index');
+        return view('gallery');
     }
-
 }

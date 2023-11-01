@@ -5,7 +5,9 @@
 <!--* Time: 03:13 PM-->
 <!--*/-->
 
-
+@php
+$menuItems = \App\Models\ContentManagement::get();
+@endphp
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse">
     <div class="container">
@@ -42,7 +44,7 @@
 
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav pull-right mainNav">
+            <!-- <ul class="nav navbar-nav pull-right mainNav">
                 <li><a href="{{('/')}}">Home</a></li>
                 <li><a href="{{url('about')}} ">About</a></li>
                 <li><a href="{{('administrative')}}">Administrative</a></li>
@@ -54,7 +56,30 @@
                 <li><a href="{{('notice')}}">Notice</a></li>
                 <li><a href="{{('importantlink')}}">Important Link</a></li>
                 <li><a href="{{('contact')}}">Contact</a></li>
-                <!-- <li><a href="contact.php">Access</a></li> -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{('/admin/login')}}">Admin Access</a></li>
+                        <li><a href="{{('/teacher/login')}}">Teacher Access</a></li>
+                        <li><a href="{{('/student/login')}}">Student Access</a></li>
+
+                    </ul>
+                </li>
+            </ul> -->
+
+            <ul class="nav navbar-nav pull-right mainNav">
+                <li><a href="{{('/')}}">{{$menuItems[0]['title']}}</a></li>
+                <li><a href="{{url('about')}} ">{{$menuItems[1]['title']}}</a></li>
+                <li><a href="{{('administrative')}}">{{$menuItems[2]['title']}}</a></li>
+                <li><a href="{{('academic')}}">{{$menuItems[3]['title']}}</a></li>
+                <li><a href="{{('opportunity')}}">{{$menuItems[4]['title']}}</a></li>
+                <li><a href="{{('admission')}}">{{$menuItems[5]['title']}}</a></li>
+                <li><a href="{{('function')}}">{{$menuItems[6]['title']}}</a></li>
+                <li><a href="{{('gallery')}}">{{$menuItems[7]['title']}}</a></li>
+                <li><a href="{{('notice')}}">{{$menuItems[8]['title']}}</a></li>
+                <li><a href="{{('importantlink')}}">{{$menuItems[9]['title']}}</a></li>
+                <li><a href="{{('contact')}}">{{$menuItems[10]['title']}}</a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access</a>
                     <ul class="dropdown-menu">
@@ -67,6 +92,7 @@
 
 
             </ul>
+
         </div>
         <div class="row">
             <header class="secondary">

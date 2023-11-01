@@ -4,7 +4,9 @@
 <!--* Date: 1/21/2021-->
 <!--* Time: 03:13 PM-->
 <!--*/-->
-
+@php
+$menuItems = \App\Models\ContentManagement::get();
+@endphp
 <footer id="footer">
 
     <div class="container">
@@ -38,17 +40,17 @@
 
                     <div class="panel-body">
                         <p class="simplenav" style="color: #80fff4">
-                            <a href="{{('/')}}" style="color: white">Home</a> |
-                            <a href="{{('about')}}" style="color: white">About</a> |
-                            <a href="{{('administrative')}}" style="color: white">Administrative</a> |
-                            <a href="{{('academic')}}" style="color: white">Academic</a> |
-                            <a href="{{('opportunity')}}" style="color: white">Opportunity</a> |
-                            <a href="{{('admission')}}" style="color: white">Admission</a> |
-                            <a href="{{('function')}}" style="color: white">Function</a> |
-                            <a href="{{('gallery')}}" style="color: white">Gallery</a> |
-                            <a href="{{('notice')}}" style="color: white">Notice</a> |
-                            <a href="{{('importantlink')}}" style="color: white">Important Link</a> |
-                            <a href="{{('contact')}}" style="color: white">Contact</a>
+                            <a href="{{('/')}}" style="color: white">{{$menuItems[0]['title']}}</a> |
+                            <a href="{{('about')}}" style="color: white">{{$menuItems[1]['title']}}</a> |
+                            <a href="{{('administrative')}}" style="color: white">{{$menuItems[2]['title']}}</a> |
+                            <a href="{{('academic')}}" style="color: white">{{$menuItems[3]['title']}}</a> |
+                            <a href="{{('opportunity')}}" style="color: white">{{$menuItems[4]['title']}}</a> |
+                            <a href="{{('admission')}}" style="color: white">{{$menuItems[5]['title']}}</a> |
+                            <a href="{{('function')}}" style="color: white">{{$menuItems[6]['title']}}</a> |
+                            <a href="{{('gallery')}}" style="color: white">{{$menuItems[7]['title']}}</a> |
+                            <a href="{{('notice')}}" style="color: white">{{$menuItems[8]['title']}}</a> |
+                            <a href="{{('importantlink')}}" style="color: white">{{$menuItems[9]['title']}}</a> |
+                            <a href="{{('contact')}}" style="color: white">{{$menuItems[10]['title']}}</a>
                         </p>
                     </div>
 
