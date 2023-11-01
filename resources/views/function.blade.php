@@ -8,7 +8,10 @@
 @extends('layouts.user_layout.layout')
 @section('content')
 
-<!-- require 'user_layout/header.php'; -->
+@php
+$functionDetailsArray = $functionDetails->toArray(); // Convert the Eloquent Collection to a PHP array
+$chunks = array_chunk($functionDetailsArray, 2); // Split the array into chunks of 2 elements each
+@endphp
 
 <header id="head" class="secondary">
     <div class="container">
@@ -24,71 +27,28 @@
         <img src="user_assets/images/functions.jpg" alt="" style="height: 460px;width: 1161px;">
     </div>
     <div class="row">
-
         <!-- main content -->
         <div id="courses">
             <section class="container">
                 <h3>Our Functions</h3>
+
+                @foreach ($chunks as $chunk)
                 <div class="row">
+                    @foreach ($chunk as $functionDetails)
                     <div class="col-md-6">
                         <div class="featured-box">
                             <div class="text">
-                                <h3>Rover Scout</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
+                                <h3>{{$functionDetails['title']}}</h3>
+                                <p>
+                                    {!! $functionDetails['description'] !!}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Cultural Events</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
+
+                    @endforeach
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Physical Activity</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Educational Tour</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Sports</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featured-box">
-                            <div class="text">
-                                <h3>Primary Treatment</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </section>
         </div>
         <!-- /main -->

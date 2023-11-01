@@ -4,11 +4,11 @@ namespace App\Http\Controllers\WebsiteControllers;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class ContactController extends Controller
 {
-    public function home()
+    public function contactUs()
     {
-        return view('index');
+        return view('contact');
     }
 
 }

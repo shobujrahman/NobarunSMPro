@@ -32,7 +32,7 @@
                 <h3>Our Academic</h3>
                 <br />
             </div>
-            <div class="row flat">
+            <!-- <div class="row flat">
                 <div class="col-lg-2 col-md-2 col-xs-6">
                     <ul class="plan plan1 featured">
                         <li class="plan-name">Class 6
@@ -66,6 +66,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="col-lg-2 col-md-2 col-xs-6">
                     <ul class="plan plan2 ">
                         <li class="plan-name">Class 7
@@ -198,7 +199,53 @@
                         </li>
                     </ul>
                 </div>
+            </div> -->
+
+            <div class="row flat">
+                @foreach ($academicDetails as $item)
+                <div class="col-lg-2 col-md-2 col-xs-6">
+                    @if ($loop->index % 2 === 0)
+                    <ul class="plan plan1 featured">
+                        @else
+                        <ul class="plan plan2">
+                            @endif
+                            <li class="plan-name">{{ $item['academic_name'] }}</li>
+                            <li class="plan-price">
+                                <h4>Section</h4>
+                                <strong>{{ $item['section'] }}</strong>
+                            </li>
+                            <li>
+                                <h4>Routine</h4>
+                                <strong>{{ $item['routine'] }}</strong>
+                            </li>
+                            <li>
+                                <h4>Textbook</h4>
+                                <strong>{{ $item['text_book'] }}</strong>
+                            </li>
+                            <li>
+                                <h4>Total Students</h4>
+                                <strong>{{ $item['total_student'] }}</strong>
+                            </li>
+                            <li>
+                                <h4>Male Students</h4>
+                                <strong>{{ $item['male_student'] }}</strong>
+                            </li>
+                            <li>
+                                <h4>Female Students</h4>
+                                <strong>{{ $item['female_student'] }}</strong>
+                            </li>
+
+                            <!-- Add other list items here -->
+                            <li class="plan-action">
+                                <a href="{{ url('/student/login') }}" class="btn">Sign In</a>
+                            </li>
+                        </ul>
+                </div>
+                @endforeach
             </div>
+
+
+
         </section>
 
         <!-- /main -->

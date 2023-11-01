@@ -26,81 +26,13 @@
 
         <!-- main content -->
         <section class="col-sm-12 maincontent">
-
-            <h3>At a Glance</h3>
+            @foreach($aboutDetails as $aboutDetail)
+            <h3>{{$aboutDetail->title}}</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-                consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates
-                placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam
-                repudiandae sapiente.
-            </p>
-            <p>
-                Consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex
-                quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil
-                nesciunt unde veniam magnam repudiandae sapiente.
+                {!! $aboutDetail->description !!}
             </p>
 
-            <h3>Physical Infrastructure</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-                consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates
-                placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam
-                repudiandae sapiente.
-            </p>
-
-            <h3>History of the Organization</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-                consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates
-                placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam
-                repudiandae sapiente.
-            </p>
-            <p>
-                Consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex
-                quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil
-                nesciunt unde veniam magnam repudiandae sapiente.
-            </p>
-
-            <h3>Success</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-                consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates
-                placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam
-                repudiandae sapiente.
-            </p>
-
-            <h3>Goal</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-                consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates
-                placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam
-                repudiandae sapiente.
-            </p>
-
-            <h3>Achievements</h3>
-            <strong>2012</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae
-                soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente. consequuntur eius
-                repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam
-                aliquam!</p>
-            <strong>2011</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae
-                soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente. consequuntur eius
-                repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam
-                aliquam!</p>
-            <strong>2010</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos
-                aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae
-                soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente. consequuntur eius
-                repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam
-                aliquam!</p>
+            @endforeach
         </section>
         <!-- /main -->
 
