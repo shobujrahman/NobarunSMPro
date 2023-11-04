@@ -16,7 +16,8 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index Details View
+                            <!-- Index Details View -->
+                            {{$member_type->title}} Details View
                         </h2>
 
                         <ul class="header-dropdown m-r--6">
