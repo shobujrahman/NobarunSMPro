@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Index Details View
+                            {{$content->title}} Details View
                         </h2>
                         <ul class="header-dropdown m-r--6">
                             <a href="{{ url('/admin/content/' . $content->id . '/details_add') }}" type="button"
