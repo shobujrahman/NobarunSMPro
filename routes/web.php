@@ -36,6 +36,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WebsiteControllersHomeController::class, 'home']);
 Route::get('/about', [AboutController::class, 'aboutUs']);
 Route::get('/contact', [ContactController::class, 'contactUs']);
+//send message from contact us page by user
+Route::post('/contact/send-message', [ContactController::class, 'sendMessage']);
 Route::get('/administrative', [AdministrativeController::class, 'administrative']);
 Route::get('/academic', [AcademicController::class, 'academic']);
 Route::get('/opportunity', [OpportunityController::class, 'opportunity']);

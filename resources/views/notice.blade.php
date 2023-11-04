@@ -5,7 +5,11 @@
 <!--*/-->
 @extends('layouts.user_layout.layout')
 @section('content')
-<!-- require 'user_layout/header.php'; -->
+
+@php
+$noticeArray = $notice->toArray(); // Convert the Eloquent Collection to a PHP array
+$chunks = array_chunk($noticeArray, 2); // Split the array into chunks of 2 elements each
+@endphp
 
 
 <header id="head" class="secondary">
@@ -17,7 +21,23 @@
 <div id="courses">
     <section class="container">
         <h3>All Notice</h3>
+        @foreach ($chunks as $chunk)
         <div class="row">
+            @foreach ($chunk as $notice)
+            <div class="col-md-6">
+                <div class="featured-box">
+                    <div class="text">
+                        <h3>{{$notice['title']}}</h3>
+                        <p>
+                            {!! $notice['description'] !!}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        @endforeach
+        <!-- <div class="row">
             <div class="col-md-6">
                 <div class="featured-box">
                     <div class="text">
@@ -76,7 +96,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 </div>
 

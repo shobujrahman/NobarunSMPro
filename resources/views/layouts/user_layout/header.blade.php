@@ -7,6 +7,7 @@
 
 @php
 $menuItems = \App\Models\ContentManagement::get();
+$notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
 @endphp
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse">
@@ -15,7 +16,7 @@ $menuItems = \App\Models\ContentManagement::get();
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{url('/')}}">
                 <img src="user_assets/images/logo1.png" alt="ko"></a>
 
         </div>
@@ -99,7 +100,7 @@ $menuItems = \App\Models\ContentManagement::get();
                 <div class="container">
                     <marquee style="background-color: #169c9c;">
                         <h4 style="color: #fff;">*Admission Going on* 1. Admission From Download Link:<a
-                                href="#">............</a> # *Notice: Scroll Latest Updates</h4>
+                                href="#">Download Form</a> # *{{$notices}}</h4>
                     </marquee>
                 </div>
             </header>

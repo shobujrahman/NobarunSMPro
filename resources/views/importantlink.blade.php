@@ -5,7 +5,11 @@
 <!--*/-->
 @extends('layouts.user_layout.layout')
 @section('content')
-<!-- require 'user_layout/header.php'; -->
+
+@php
+$importantLinksArray = $importantlinks->toArray(); // Convert the Eloquent Collection to a PHP array
+$chunks = array_chunk($importantLinksArray, 3); // Split the array into chunks of 2 elements each
+@endphp
 
 
 <header id="head" class="secondary">
@@ -16,7 +20,7 @@
 
 <div id="courses">
     <section class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-4">
                 <div class="featured-box">
                     <div class="text">
@@ -99,7 +103,24 @@
                 </div>
             </div>
 
+        </div> -->
+
+        @foreach ($chunks as $chunk)
+        <div class="row">
+            @foreach ($chunk as $importantlink)
+            <div class="col-md-4">
+                <div class="featured-box">
+                    <div class="text">
+                        <h3>{{$importantlink['title']}}</h3>
+                        <p>
+                            {!! $importantlink['description'] !!}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
+        @endforeach
     </section>
 </div>
 
