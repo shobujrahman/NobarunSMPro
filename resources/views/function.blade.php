@@ -24,7 +24,7 @@ $chunks = array_chunk($functionDetailsArray, 2); // Split the array into chunks 
 <section class="container">
     <div class="row">
         <br>
-        <img src="user_assets/images/functions.jpg" alt="" style="height: 460px;width: 1161px;">
+        <img src="{{ asset('images/content-images/' . $image->image) }}" alt="" style="height: 460px;width: 1161px;">
     </div>
     <div class="row">
         <!-- main content -->

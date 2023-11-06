@@ -20,17 +20,13 @@
 
         <div class="fluid_container">
             <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
-                <div data-thumb="user_assets/images/slides/thumbs/img1.jpg"
-                    data-src="user_assets/images/slides/img1.jpg">
-                    <!--                            <h2>..</h2>-->
+                <div data-thumb="{{ asset('images/content-images/' . $home->image) }}"
+                    data-src="{{ asset('images/content-images/' . $home->image) }}">
+                    <!-- You can optionally include content here like a caption -->
+                    <!-- <h2>..</h2> -->
                 </div>
-                <div data-thumb="user_assets/images/slides/thumbs/img2.jpg"
-                    data-src="user_assets/images/slides/img2.jpg">
-                </div>
-                <div data-thumb="user_assets/images/slides/thumbs/img3.jpg"
-                    data-src="user_assets/images/slides/img3.jpg">
-                </div>
-            </div><!-- #camera_wrap_3 -->
+                <!-- Additional slides can be added here with the same structure -->
+            </div>
         </div><!-- .fluid_container -->
     </div>
 </header>

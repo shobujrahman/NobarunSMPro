@@ -20,7 +20,8 @@
 <section class="container">
     <div class="row">
         <br>
-        <img src="user_assets/images/about1.jpg" alt="" style="height: 460px;width: 1161px;">
+        <img src="{{ asset('images/content-images/' . $aboutImage->image) }}" alt=""
+            style="height: 460px;width: 1161px;">
     </div>
     <div class="row">
 
