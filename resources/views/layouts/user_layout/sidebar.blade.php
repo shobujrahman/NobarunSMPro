@@ -20,14 +20,17 @@ $headmaster = \App\Models\MemberDetails::where('designation', 'Headmaster')->fir
     <div class="row panel">
 
         <div class="col-xs-12">
-            <h3>School {{$headmaster->designation}}</h3>
+            @if($headmaster)
+            <h3>School Headmaster</h3>
             <p>
                 <img src="{{asset('images/member-images/'. $headmaster->image)}}" alt="">
             </p>
             <p>
                 {!! $headmaster->description !!}
             </p>
-
+            @else
+            <h3>Data Loading</h3>
+            @endif
         </div>
     </div>
 
