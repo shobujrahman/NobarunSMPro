@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
 
-                                <a href="{{ ('/admin/gallery/details_index') }}" type="button"
+                                <a href="{{ ('/admin/gallery/'.$gallery->id.'/details_index') }}" type="button"
                                     class="btn btn-danger waves-effect">Back</a>
                                 <button type="submit" class="btn btn-success waves-effect">Update</button>
                             </div>

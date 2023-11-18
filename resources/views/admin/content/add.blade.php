@@ -36,20 +36,16 @@
                                         <input type="file" name="image" class="form-control" />
                                     </div>
                                 </div>
-
                                 <a href="{{ ('/admin/content/index') }}" type="button"
                                     class="btn btn-danger waves-effect">Back</a>
                                 <button type="submit" class="btn btn-success waves-effect">Save</button>
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div>
         <!-- #END# CKEditor -->
-
     </div>
 </section>
 
