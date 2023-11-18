@@ -23,50 +23,42 @@
     </div>
 
     <div class="row">
-
-        <!-- main content -->
+        <!-- Main content -->
         <section class="col-sm-12 maincontent">
             @foreach($administrativeDetails as $administrativeDetail)
             <h3>{{$administrativeDetail->title}}</h3>
-            <p>
-                {!! $administrativeDetail->description !!}
-            </p>
+            <p>{!! $administrativeDetail->description !!}</p>
             @endforeach
 
-            <!-- members section -->
+            <!-- Members section -->
             @foreach($members as $member)
             <h3>Meet {{$member->title}}</h3>
 
-            @foreach($member->member_details as $member_detail)
             <div class="row">
+                @foreach($member->member_details as $member_detail)
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <!-- Team Member -->
                     <div class="team-member">
-                        <!-- Image Hover Block -->
-                        <div class="member-img portfolio-item">
-                            <!-- Image  -->
+                        <div class="member-img portfolio-item d-flex flex-column align-items-center">
                             <img class="img-responsive"
                                 src="{{ asset('images/member-images/'. $member_detail->image) }}" alt="">
-                            <div class="portfolio-desc align-center">
-                                <div class="folio-info">
+                            <div class="portfolio-desc">
+                                <div class="folio-info text-center mt-2">
                                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-                                        data-target="#myModal_{{$member_detail->id}}">Details</button>
+                                        data-target="#myModal_{{$member_detail->id}}">
+                                        Details
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Member Details -->
                         <h4>{{$member_detail->name}}</h4>
-                        <!-- Designation -->
                         <span class="pos">{{$member_detail->designation}}</span>
-                        <!-- <div class="team-socials">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                            </div> -->
                     </div>
                 </div>
+                @endforeach
             </div>
 
             <!-- Modal -->
+            @foreach($member->member_details as $member_detail)
             <div class="modal fade" id="myModal_{{$member_detail->id}}" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -80,30 +72,25 @@
                             <h6 class="modal-title">{{$member_detail->email}}</h6>
                         </div>
                         <div class="modal-body">
-                            <p>
-                                {{$member_detail->name}} is {{$member_detail->designation}} of our institution.
-                                {!! $member_detail->description !!}
-                            </p>
-
+                            <p>{{$member_detail->name}} is {{$member_detail->designation}} of our institution.
+                                {!! $member_detail->description !!}</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-
                 </div>
             </div>
             @endforeach
             @endforeach
-
         </section>
         <!-- /main -->
 
         <!-- Sidebar -->
-
+        <!-- You can add your sidebar content here if needed -->
         <!-- /Sidebar -->
-
     </div>
+
 </section>
 <!-- /container -->
 

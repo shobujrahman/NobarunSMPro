@@ -29,17 +29,18 @@ $notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
                     style="color: #044211;">Since: </span><span style="color: #001bdb">1968</span></h3>
         </div>
         <div class="navbar-header">
-            <h3 style="margin-top: -25px;padding-left: 425px;font-size: medium">
+            <h3 style="margin-top: -25px;padding-left: 425px;font-size: medium; text-align: center;">
                 <span style="color: #044211;">EIIN: </span><span style="color: #001bdb">111937</span><span
-                    style="color: #fc3400"> ; </span><span style="color: #044211;">School Code: </span><span
+                    style="color: #fc3400"> ; </span> <span style="color: #044211;">School Code: </span><span
                     style="color: #001bdb">7578</span>
             </h3>
             <br>
-            <h4 style="margin-top: -25px;padding-left: 417px;font-size: medium">
-                <span style="color: #044211;">e-mail: </span><span style="color: #001bdb">nabarunbidyaniketon@gmail.com</span>
+            <h4 style="margin-top: -25px; padding-left: 417px;font-size: medium; text-align: center;">
+                <span style="color: #044211;">E-mail: </span><span
+                    style="color: #001bdb">nabarunbidyaniketon@gmail.com</span>
             </h4>
 
-            <hr style="margin-right: -600px; border-color: #5f0808;">
+            <hr style="margin-right: -486px; border-color: #5f0808;">
 
         </div>
         <div class="navbar-collapse collapse">

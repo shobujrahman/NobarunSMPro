@@ -1,4 +1,3 @@
-{{-- require '../../admin_layout/header.php'; --}}
 @extends('layouts.admin_layout.layout')
 @section('content')
 
@@ -99,5 +98,3 @@
     </div>
 </section>
 @endsection
-
-{{-- require '../../admin_layout/footer.php'; --}}

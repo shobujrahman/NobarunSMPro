@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
 
-                                <a href="{{ ('/admin/content/details_index') }}" type="button"
+                                <a href="{{ ('/admin/content/'.$content->id.'/details_index/') }}" type="button"
                                     class="btn btn-danger waves-effect">Back</a>
                                 <button type="submit" class="btn btn-success waves-effect">Update</button>
                             </div>
