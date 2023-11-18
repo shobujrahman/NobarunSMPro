@@ -21,24 +21,22 @@ $notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
 
         </div>
         <div class="navbar-header">
-            <h1 style="margin-top: -7px;font-size: 70px;color: #1aa094;padding-left: 95px;">Nabarun Bidyaniketon
+            <h1 style="margin-top: -7px;font-size: 70px;color: #C90204;padding-left: 95px;">Nabarun Bidyaniketon
             </h1>
-            <h2 style="margin-top: auto;margin-bottom: 40px;color: #5f0808;padding-left: 230px;">Muktagacha,
+            <h2 style="margin-top: auto;margin-bottom: 40px;color: #5f0808;padding-left: 230px;">Muktagachha,
                 Mymensingh</h2>
             <h3 style="margin-top: -32px;margin-bottom: 40px;padding-left: 330px;font-size: large;"><span
-                    style="color: #169030;">Since: </span><span style="color: #900b0b">1968</span></h3>
+                    style="color: #044211;">Since: </span><span style="color: #001bdb">1968</span></h3>
         </div>
         <div class="navbar-header">
             <h3 style="margin-top: -25px;padding-left: 425px;font-size: medium">
-                <span style="color: #169030;">EIIN: </span><span style="color: #900b0b">111937</span><span
-                    style="color: #fc3400"> ; </span><span style="color: #169030;">School Code: </span><span
-                    style="color: #900b0b">7578</span>
+                <span style="color: #044211;">EIIN: </span><span style="color: #001bdb">111937</span><span
+                    style="color: #fc3400"> ; </span><span style="color: #044211;">School Code: </span><span
+                    style="color: #001bdb">7578</span>
             </h3>
             <br>
             <h4 style="margin-top: -25px;padding-left: 417px;font-size: medium">
-                <span style="color: #169030;">Upazila Code: </span><span style="color: #900b0b">286</span><span
-                    style="color: #fc3400"> ; </span><span style="color: #169030;">Zila Code: </span><span
-                    style="color: #900b0b">035</span>
+                <span style="color: #044211;">e-mail: </span><span style="color: #001bdb">nabarunbidyaniketon@gmail.com</span>
             </h4>
 
             <hr style="margin-right: -600px; border-color: #5f0808;">
@@ -98,9 +96,9 @@ $notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
         <div class="row">
             <header class="secondary">
                 <div class="container">
-                    <marquee style="background-color: #169c9c;">
-                        <h4 style="color: #fff;">*Admission Going on* 1. Admission From Download Link:<a
-                                href="#">Download Form</a> # *{{$notices}}</h4>
+                    <marquee style="background-color: #027a7a;">
+                        <h4 style="color: #fff;">Notices: # <a style="color: #fff;"
+                                href="{{('notice')}}">*{{$notices}}</a></h4>
                     </marquee>
                 </div>
             </header>

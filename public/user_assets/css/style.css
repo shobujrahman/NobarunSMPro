@@ -237,7 +237,8 @@ ul, .list.custom-list ul {
 	top: -100px;
 }
 .navbar-inverse {
-	background: #fff;
+	/* background: #fff; */
+    background: #eeff1d;
 margin: 0 auto;
 }
 .navbar-inverse {
