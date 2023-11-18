@@ -20,53 +20,37 @@ $notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
                 <img src="user_assets/images/logo1.png" alt="ko"></a>
 
         </div>
-        <div class="navbar-header">
-            <h1 style="margin-top: -7px;font-size: 70px;color: #C90204;padding-left: 95px;">Nabarun Bidyaniketon
+        <div class="navbar-header" style="text-align: center;">
+            <h1 style="margin-top: -7px; font-size: 70px; color: #C90204; padding-left: 150px;">
+                Nabarun Bidyaniketon
             </h1>
-            <h2 style="margin-top: auto;margin-bottom: 40px;color: #5f0808;padding-left: 230px;">Muktagachha,
-                Mymensingh</h2>
-            <h3 style="margin-top: -32px;margin-bottom: 40px;padding-left: 330px;font-size: large;"><span
-                    style="color: #044211;">Since: </span><span style="color: #001bdb">1968</span></h3>
-        </div>
-        <div class="navbar-header">
-            <h3 style="margin-top: -25px;padding-left: 425px;font-size: medium; text-align: center;">
-                <span style="color: #044211;">EIIN: </span><span style="color: #001bdb">111937</span><span
-                    style="color: #fc3400"> ; </span> <span style="color: #044211;">School Code: </span><span
-                    style="color: #001bdb">7578</span>
+            <h2 style=" margin-top: auto; margin-bottom: 40px; color: #5f0808; padding-left: 150px;">
+                Muktagachha, Mymensingh
+            </h2>
+            <h3 style="margin-top: -32px; margin-bottom: 40px; padding-left: 150px; font-size: large;">
+                <span style="color: #044211;">Since: </span>
+                <span style="color: #001bdb">1968</span>
             </h3>
-            <br>
-            <h4 style="margin-top: -25px; padding-left: 417px;font-size: medium; text-align: center;">
+        </div>
+
+        <div class="navbar-header" style="text-align: center;">
+            <h3 style="margin-top: -32px; margin-bottom: 40px; padding-left: 460px; font-size: medium;">
+                <span style="color: #044211;">EIIN: </span>
+                <span style="color: #001bdb">111937</span>
+                <span style="color: #fc3400"> ; </span>
+                <span style="color: #044211;">School Code: </span>
+                <span style="color: #001bdb">7578</span>
+            </h3>
+            <h3 style="margin-top: -32px; margin-bottom: 40px; padding-left: 460px; font-size: medium;">
                 <span style="color: #044211;">E-mail: </span><span
                     style="color: #001bdb">nabarunbidyaniketon@gmail.com</span>
-            </h4>
+            </h3>
 
-            <hr style="margin-right: -486px; border-color: #5f0808;">
+            <hr style="margin-right: -443px; border-color: #5f0808;">
 
         </div>
+
         <div class="navbar-collapse collapse">
-            <!-- <ul class="nav navbar-nav pull-right mainNav">
-                <li><a href="{{('/')}}">Home</a></li>
-                <li><a href="{{url('about')}} ">About</a></li>
-                <li><a href="{{('administrative')}}">Administrative</a></li>
-                <li><a href="{{('academic')}}">Academic</a></li>
-                <li><a href="{{('opportunity')}}">Opportunity</a></li>
-                <li><a href="{{('admission')}}">Admission</a></li>
-                <li><a href="{{('function')}}">Function</a></li>
-                <li><a href="{{('gallery')}}">Gallery</a></li>
-                <li><a href="{{('notice')}}">Notice</a></li>
-                <li><a href="{{('importantlink')}}">Important Link</a></li>
-                <li><a href="{{('contact')}}">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{('/admin/login')}}">Admin Access</a></li>
-                        <li><a href="{{('/teacher/login')}}">Teacher Access</a></li>
-                        <li><a href="{{('/student/login')}}">Student Access</a></li>
-
-                    </ul>
-                </li>
-            </ul> -->
-
             <ul class="nav navbar-nav pull-right mainNav">
                 <li><a href="{{('/')}}">{{$menuItems[0]['title']}}</a></li>
                 <li><a href="{{url('about')}} ">{{$menuItems[1]['title']}}</a></li>
