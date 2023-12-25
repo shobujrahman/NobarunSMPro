@@ -22,6 +22,7 @@
                         <div class="content-area">
                             <h3>Jon Catter</h3>
                             <h5>Student</h5>
+                            <h5>Current Class : 6</h5>
                         </div>
                     </div>
                     <div class="profile-footer">
@@ -50,8 +51,18 @@
                                 <span>Address: </span>
                                 <span>Muktagacha, Mymensingh</span>
                             </li>
+                            <li>
+                                <span>Father Name: </span>
+                                <span>F. Prasad Paul</span>
+                            </li>
+                            <li>
+                                <span>Mother Name: </span>
+                                <span>M. Prasad Paul</span>
+                            </li>
                         </ul>
                         <!-- <button class="btn btn-primary btn-lg waves-effect btn-block">FOLLOW</button> -->
+                        <a href="{{ ('/admin/studentaccess/index') }}" type="button"
+                                class="btn btn-danger waves-effect">Back</a>
                     </div>
                 </div>
 

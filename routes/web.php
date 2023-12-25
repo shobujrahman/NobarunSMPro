@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminPanelControllers\Admin\GalleryController;
 use App\Http\Controllers\AdminPanelControllers\Admin\HomeController;
 use App\Http\Controllers\AdminPanelControllers\Admin\MemberController;
 use App\Http\Controllers\AdminPanelControllers\Admin\UtileController;
+use App\Http\Controllers\AdminPanelControllers\Admin\StudentAccessController;
+use App\Http\Controllers\AdminPanelControllers\Admin\TeacherAccessController;
 use App\Http\Controllers\AdminPanelControllers\Auth\AuthController;
 use App\Http\Controllers\AdminPanelControllers\Teachers\TeachersController;
 use App\Http\Controllers\WebsiteControllers\AboutController;
@@ -114,6 +116,17 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/gallery/{gid}/details_edit/{gdId}', [GalleryController::class, 'detailsEdit']);
     Route::post('/admin/gallery/{gid}/details_update/{gdId}', [GalleryController::class, 'detailsUpdate']);
     Route::get('/admin/gallery/details_delete/{gdId}', [GalleryController::class, 'detailsDelete']);
+
+    //student access/registration route
+    Route::get('/admin/studentaccess/index', [StudentAccessController::class, 'index']);
+    Route::get('/admin/studentaccess/add', [StudentAccessController::class, 'add']);
+    Route::get('/admin/studentaccess/edit', [StudentAccessController::class, 'edit']);
+    Route::get('/admin/studentaccess/studentviewprofile', [StudentAccessController::class, 'studentViewProfile']);
+    //Teacher access/registration route
+    Route::get('/admin/teacheraccess/index', [TeacherAccessController::class, 'index']);
+    Route::get('/admin/teacheraccess/add', [TeacherAccessController::class, 'add']);
+    Route::get('/admin/teacheraccess/edit', [TeacherAccessController::class, 'edit']);
+    Route::get('/admin/teacheraccess/teacherviewprofile', [TeacherAccessController::class, 'teacherViewProfile']);
 });
 
 //teacher route

@@ -1,6 +1,5 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+@extends('layouts.admin_layout.layout')
+@section('content')
 
 <section class="content">
         <div class="container-fluid">
@@ -13,41 +12,41 @@ require '../../admin_layout/header.php';
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Add (Teacher Access)</h2>
+                            <h2>Edit (Teacher Access)</h2>
                         </div>
 
                         <div class="body">
                         <form action="/" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
                         <div class="row clearfix">
-                                <div class="col-sm-4">
+                        <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="firstname">First Name</label>
-                                            <input type="text" class="form-control" placeholder="First Name" />
+                                            <input type="text" class="form-control" value="Jenette" />
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-4">
+                                    </div>
+                                    <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="lastname">Last Name</label>
-                                            <input type="text" class="form-control" placeholder="Last Name" />
+                                            <input type="text" class="form-control" value="Caldwell" />
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <div class="form-line">
+                                    <div class="form-line">
                                     <label for="designation">Designation</label>
-                                    <input type="text" class="form-control" placeholder="Designation" />
-                                        </div>
+                                    <input type="text" class="form-control" value="Development Lead" />
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="address">Address</label>
-                                            <input type="text" class="form-control" placeholder="Address" />
+                                            <input type="text" class="form-control" value="Muktagacha, Mymensingh" />
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +54,7 @@ require '../../admin_layout/header.php';
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="email">E-mail</label>
-                                            <input type="email" class="form-control" placeholder="nbnteacher@email.com" />
+                                            <input type="email" class="form-control" value="nbnteacher@email.com" />
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +62,7 @@ require '../../admin_layout/header.php';
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="contactno">Contact No.</label>
-                                            <input type="number" class="form-control" placeholder="01700000000" />
+                                            <input type="number" class="form-control" value="01700000000" />
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +70,7 @@ require '../../admin_layout/header.php';
                                     <div class="form-group">
                                         <div class="form-line">
                                         <label for="joiningdate">Joining Date</label>
-                                            <input type="date" class="form-control" placeholder="00/00/0000" />
+                                            <input type="" class="form-control" value="02/15/1998" />
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +78,7 @@ require '../../admin_layout/header.php';
                                     <div class="form-group">
                                         <div class="form-line">
                                     <label for="accessid">Access Id</label>
-                                    <input type="number" class="form-control" placeholder="Access Id" />
+                                    <input type="number" class="form-control" value="111937757859" disabled/>
                                         </div>
                                     </div>
                                 </div>
@@ -87,11 +86,11 @@ require '../../admin_layout/header.php';
                                     <div class="form-group">
                                         <div class="form-line">
                                     <label for="accesspassword">Access Password</label>
-                                    <input type="text" class="form-control" placeholder="Access Password" />
+                                    <input type="password" class="form-control" value="Teacher@7578" disabled/>
                                         </div>
                                     </div>
                                 </div>
-                               
+
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                     <label >Image</label>
@@ -99,23 +98,20 @@ require '../../admin_layout/header.php';
                                     </div>
                                 </div>
 
-                                
+
                             </div>
-                            <a href="../teacheraccess/index.php" type="button" class="btn btn-danger waves-effect">Back</a>
-                                <button type="submit" class="btn btn-success waves-effect">Save</button>
+                            <a href="{{ ('/admin/teacheraccess/index') }}" type="button" class="btn btn-danger waves-effect">Back</a>
+                                <button type="submit" class="btn btn-success waves-effect">Update</button>
                         </form>
                         </div>
-                        
+
 
                     </div>
                 </div>
             </div>
             <!-- #END# CKEditor -->
-            
+
         </div>
     </section>
 
-
-<?php
-require '../../admin_layout/footer.php';
-?>
+    @endsection

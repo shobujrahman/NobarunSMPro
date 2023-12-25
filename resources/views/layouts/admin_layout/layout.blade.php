@@ -131,12 +131,11 @@
                 <div class="user-info">
                     <div class="image">
                         <img src="../../admin_assets/logo1.png" width="50" height="50" alt="logo" />
-                        <img src="../../admin_assets/user10.jpeg" width="48" height="48" alt="User" />
+                        {{-- <img src="../../admin_assets/user10.jpeg" width="48" height="48" alt="User" /> --}}
                     </div>
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Revert
-                            Technology</div>
-                        <div class="email">administrator@gmail.com</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nabarun Biddyaniketon</div>
+                        <div class="email">Administrator</div>
                         <div class="btn-group user-helper-dropdown">
                             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="true">keyboard_arrow_down</i>
@@ -254,7 +253,7 @@
 
 
                                 <li>
-                                    <a href="../teacheraccess/index.php">
+                                    <a href="{{ ('/admin/teacheraccess/index') }}">
                                         <i class="material-icons">accessible</i>
                                         <span>Teacher Access</span>
                                     </a>
@@ -262,7 +261,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="../studentaccess/index.php">
+                                    <a href="{{ ('/admin/studentaccess/index') }}">
                                         <i class="material-icons">accessibility</i>
                                         <span>Student Access</span>
                                     </a>

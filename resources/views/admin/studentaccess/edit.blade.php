@@ -77,8 +77,32 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
+                                            <label for="addmissionclass">Addmission Class</label>
+                                            <input type="text" class="form-control" value="6" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="fathername">Father Name</label>
+                                            <input type="text" class="form-control" value="F.Prasad Paul" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="mothername">Mother Name</label>
+                                            <input type="text" class="form-control" value="P.Prasad Paul" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
                                             <label for="accessid">Access Id</label>
-                                            <input type="number" class="form-control" value="2010757859" />
+                                            <input type="number" class="form-control" value="2010757859" disabled/>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +110,7 @@
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="accesspassword">Access Password</label>
-                                            <input type="text" class="form-control" value="Student@7578" />
+                                            <input type="password" class="form-control" value="Student@7578" disabled/>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +124,7 @@
 
 
                             </div>
-                            <a href="../studentaccess/index.php" type="button"
+                            <a href="{{ ('/admin/studentaccess/index') }}" type="button"
                                 class="btn btn-danger waves-effect">Back</a>
                             <button type="submit" class="btn btn-success waves-effect">Update</button>
                         </form>

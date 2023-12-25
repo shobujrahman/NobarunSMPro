@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 03:27 PM
+-- Generation Time: Dec 25, 2023 at 01:52 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -52,6 +52,26 @@ INSERT INTO `academic_user_views` (`id`, `academic_name`, `section`, `routine`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin_info`
+--
+
+CREATE TABLE `admin_info` (
+  `admin_info_id` int(25) NOT NULL,
+  `institute_name` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `contact` int(25) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `admin_user_image` varchar(255) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `communications`
 --
 
@@ -72,7 +92,8 @@ CREATE TABLE `communications` (
 
 INSERT INTO `communications` (`id`, `name`, `email`, `phone`, `subject`, `message`, `created_at`, `updated_at`) VALUES
 (1, 'Shobuj Rahman', 'shobujrahman111@gmail.com', '01504001152', 'test', 'test', '2023-11-04 12:40:00', '2023-11-04 12:40:00'),
-(2, 'prohor Rahman', 'isprohor007@gmail.com', '01504001152', 'test', 'test', '2023-11-04 12:42:25', '2023-11-04 12:42:25');
+(2, 'prohor Rahman', 'isprohor007@gmail.com', '01504001152', 'test', 'test', '2023-11-04 12:42:25', '2023-11-04 12:42:25'),
+(3, 'Rahul prasad', 'rahulprasadjoy@gmail.com', '10125478956', 'Test', 'Demo message', '2023-12-13 05:35:29', '2023-12-13 05:35:29');
 
 -- --------------------------------------------------------
 
@@ -260,7 +281,7 @@ INSERT INTO `member_details` (`id`, `name`, `email`, `designation`, `address`, `
 (6, 'Haris Jamal', 'haris@gmail.com', 'Secretary', 'College Road', '01893284765', '<p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>', '1699109056.jpg', 3, '2023-11-04 08:44:16', '2023-11-04 08:44:16'),
 (7, 'prohor', 'prohor@gmail.com', 'ceo', 'Nouakhali', '01756983258', '<p>Mui Nokhailla</p>', '1700142116.jpg', 3, '2023-11-16 07:41:56', '2023-11-16 07:41:56'),
 (8, 'John Doe', 'johndoe@gmail.com', 'PROJECT CO-ORDINATION', 'Attanibazer', '01746985232', '<p>Fhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsais</p>', '1700142542.jpg', 2, '2023-11-16 07:49:02', '2023-11-16 07:49:02'),
-(9, 'John Doe B', 'jondoe@gmail.com', 'COO', 'Collage Road', '01475323225', '<p>IT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the band</p>', '1700142629.jpg', 2, '2023-11-16 07:50:29', '2023-11-16 07:50:29');
+(9, 'John Doe B', 'jondoe@gmail.com', 'COO', 'Collage Road', '01475323225', '<p>IT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the band</p>', '1702466919.jpg', 2, '2023-11-16 07:50:29', '2023-12-13 05:28:39');
 
 -- --------------------------------------------------------
 
@@ -351,6 +372,51 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_registration`
+--
+
+CREATE TABLE `student_registration` (
+  `student_registration_id` int(25) NOT NULL,
+  `student_access_id` varchar(255) NOT NULL,
+  `student_access_password` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `contact` int(25) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `addmission_class` varchar(255) NOT NULL,
+  `addmission_date` date NOT NULL,
+  `father_name` varchar(255) NOT NULL,
+  `mother_name` varchar(255) NOT NULL,
+  `student_user_image` varchar(255) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_registration`
+--
+
+CREATE TABLE `teacher_registration` (
+  `teacher_registration_id` int(25) NOT NULL,
+  `teacher_access_id` varchar(255) NOT NULL,
+  `teacher_access_password` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `contact` int(25) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `joining_date` date NOT NULL,
+  `teacher_user_image` varchar(255) NOT NULL,
+  `created_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -371,7 +437,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$Zl9QPGqneDNAcSFilrg1a.cR.spAAdDzJDTC8.aM/EyyPF/fGoqbq', 1, 'NB4QZMoVETNa0ocgIYGNJH3leBaFOWR77zfQ02L3dbW72z6zLQfeeDaZo1oK', '2023-10-09 14:53:27', '2023-10-09 14:53:32');
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$Zl9QPGqneDNAcSFilrg1a.cR.spAAdDzJDTC8.aM/EyyPF/fGoqbq', 1, 'YWnJrrmZiRPAOFmfvOIvXNfiHlNDzt5689BnfVRdcX4XTOEDWm9wrdiDrPrU', '2023-10-09 14:53:27', '2023-10-09 14:53:32');
 
 -- --------------------------------------------------------
 
@@ -509,7 +575,7 @@ ALTER TABLE `academic_user_views`
 -- AUTO_INCREMENT for table `communications`
 --
 ALTER TABLE `communications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `content_management`
