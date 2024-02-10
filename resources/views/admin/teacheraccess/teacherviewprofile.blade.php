@@ -1,6 +1,5 @@
-<?php
-require '../../admin_layout/header.php';
-?>
+@extends('layouts.admin_layout.layout')
+@section('content')
 
 <section class="content">
         <div class="container-fluid">
@@ -8,7 +7,7 @@ require '../../admin_layout/header.php';
                 <h2>
                 ACCESS MANAGEMENT (<span>Teacher Management</span>)
                 </h2>
-                
+
             </div>
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-3">
@@ -52,6 +51,8 @@ require '../../admin_layout/header.php';
                                 </li>
                             </ul>
                             <!-- <button class="btn btn-primary btn-lg waves-effect btn-block">FOLLOW</button> -->
+                            <a href="{{ ('/admin/teacheraccess/index') }}" type="button"
+                                class="btn btn-danger waves-effect">Back</a>
                         </div>
                     </div>
 
@@ -180,7 +181,7 @@ require '../../admin_layout/header.php';
                     </div>
                 </div>
             </div>
-            
+
         </div>
                         </div>
                     </div>
@@ -189,6 +190,4 @@ require '../../admin_layout/header.php';
         </div>
     </section>
 
-<?php
-require '../../admin_layout/footer.php';
-?>
+    @endsection
