@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminPanelControllers\Admin\CommunicationController;
 use App\Http\Controllers\AdminPanelControllers\Admin\ContentController;
 use App\Http\Controllers\AdminPanelControllers\Admin\GalleryController;
 use App\Http\Controllers\AdminPanelControllers\Admin\HomeController;
 use App\Http\Controllers\AdminPanelControllers\Admin\MemberController;
-use App\Http\Controllers\AdminPanelControllers\Admin\UtileController;
 use App\Http\Controllers\AdminPanelControllers\Admin\StudentAccessController;
 use App\Http\Controllers\AdminPanelControllers\Admin\TeacherAccessController;
+use App\Http\Controllers\AdminPanelControllers\Admin\UtileController;
 use App\Http\Controllers\AdminPanelControllers\Auth\AuthController;
 use App\Http\Controllers\AdminPanelControllers\Teachers\TeachersController;
 use App\Http\Controllers\WebsiteControllers\AboutController;
@@ -58,8 +59,9 @@ Route::get('/student/login', [AuthController::class, 'studentLoginForm']);
 
 Route::middleware(['admin'])->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'home']);
-    Route::get('admin/profile', [HomeController::class, 'showprofile']);
-    Route::get('admin/editprofile', [HomeController::class, 'editprofile']);
+    Route::get('admin/profile', [HomeController::class, 'showAdminProfile']);
+    Route::get('admin/editProfile', [HomeController::class, 'editAdminProfile']);
+    Route::post('admin/updateProfile', [HomeController::class, 'updateAdminProfile']);
     //content route
     Route::get('/admin/content/index', [ContentController::class, 'index']);
     Route::get('/admin/content/add', [ContentController::class, 'add']);
@@ -82,7 +84,8 @@ Route::middleware(['admin'])->group(function () {
     //deleteNotice
     Route::get('/admin/notice/delete/{id}', [UtileController::class, 'deleteNotice']);
 
-    Route::get('/admin/communication/index', [UtileController::class, 'communicationindex']);
+    //communication route
+    Route::get('/admin/communication/index', [CommunicationController::class, 'communicationindex']);
 
     Route::get('/admin/academic/userviewindex', [UtileController::class, 'academicUserViewIndex']);
     Route::get('/admin/academic/userviewadd', [UtileController::class, 'academicUserViewAdd']);

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 25, 2023 at 01:52 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: localhost
+-- Generation Time: Feb 29, 2024 at 04:47 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `academic_user_views` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `academic_name` varchar(255) NOT NULL,
-  `section` varchar(255) NOT NULL,
-  `routine` varchar(255) NOT NULL,
-  `text_book` varchar(255) NOT NULL,
+  `academic_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `routine` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_book` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `total_student` int(11) NOT NULL,
   `male_student` int(11) NOT NULL,
   `female_student` int(11) NOT NULL,
@@ -52,22 +52,30 @@ INSERT INTO `academic_user_views` (`id`, `academic_name`, `section`, `routine`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_info`
+-- Table structure for table `admin_details`
 --
 
-CREATE TABLE `admin_info` (
-  `admin_info_id` int(25) NOT NULL,
-  `institute_name` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `contact` int(25) NOT NULL,
-  `street` varchar(255) NOT NULL,
-  `city` varchar(255) NOT NULL,
-  `division` varchar(255) NOT NULL,
-  `admin_user_image` varchar(255) NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `admin_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `street` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `division` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin_details`
+--
+
+INSERT INTO `admin_details` (`id`, `user_id`, `first_name`, `last_name`, `designation`, `contact`, `street`, `city`, `division`, `image`, `created_at`, `updated_at`) VALUES
+(2, 1, 'prohor', 'Rahman', 'Head Teacher', '01505434772', 'H: 506/3, R: 10', 'Dhaka', 'Dhaka', '1709220214.jpg', '2024-02-29 07:51:22', '2024-02-29 09:23:34');
 
 -- --------------------------------------------------------
 
@@ -77,11 +85,11 @@ CREATE TABLE `admin_info` (
 
 CREATE TABLE `communications` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `subject` text NOT NULL,
-  `message` longtext NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -91,9 +99,9 @@ CREATE TABLE `communications` (
 --
 
 INSERT INTO `communications` (`id`, `name`, `email`, `phone`, `subject`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Shobuj Rahman', 'shobujrahman111@gmail.com', '01504001152', 'test', 'test', '2023-11-04 12:40:00', '2023-11-04 12:40:00'),
-(2, 'prohor Rahman', 'isprohor007@gmail.com', '01504001152', 'test', 'test', '2023-11-04 12:42:25', '2023-11-04 12:42:25'),
-(3, 'Rahul prasad', 'rahulprasadjoy@gmail.com', '10125478956', 'Test', 'Demo message', '2023-12-13 05:35:29', '2023-12-13 05:35:29');
+(1, 'Shobuj Rahman', 'shobujrahman111@gmail.com', '+01504001152', 'For Addmission Details', 'As the new academic year approaches, parents and guardians are eager to secure admission for their children in reputable educational institutions. With varying admission criteria, deadlines, and procedures, families are navigating through a plethora of information regarding application forms, required documents, entrance exams, and tuition fees. Schools, in turn, strive to streamline the admission process to accommodate the influx of applicants while maintaining standards of excellence and inclusivity.', '2023-11-04 12:40:00', '2023-11-04 12:40:00'),
+(2, 'prohor Rahman', 'isprohor007@gmail.com', '+01604001152', 'For Examination Details', 'As the new academic year approaches, parents and guardians are eager to secure admission for their children in reputable educational institutions. With varying admission criteria, deadlines, and procedures, families are navigating through a plethora of information regarding application forms, required documents, entrance exams, and tuition fees. Schools, in turn, strive to streamline the admission process to accommodate the influx of applicants while maintaining standards of excellence and inclusivity.', '2023-11-04 12:42:25', '2023-11-04 12:42:25'),
+(3, 'Nafis Iqbal', 'nafis123@gmail.com', '+01869438293', 'For Annual Program Details', 'As the new academic year approaches, parents and guardians are eager to secure admission for their children in reputable educational institutions. With varying admission criteria, deadlines, and procedures, families are navigating through a plethora of information regarding application forms, required documents, entrance exams, and tuition fees. Schools, in turn, strive to streamline the admission process to accommodate the influx of applicants while maintaining standards of excellence and inclusivity.', '2024-02-29 02:56:41', '2024-02-29 02:56:41');
 
 -- --------------------------------------------------------
 
@@ -103,8 +111,8 @@ INSERT INTO `communications` (`id`, `name`, `email`, `phone`, `subject`, `messag
 
 CREATE TABLE `content_management` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -123,7 +131,7 @@ INSERT INTO `content_management` (`id`, `title`, `image`, `created_at`, `updated
 (16, 'Function', '1698849455.webp', '2023-11-01 08:37:35', '2023-11-01 08:37:35'),
 (17, 'Gallery', '1698849468.webp', '2023-11-01 08:37:48', '2023-11-01 08:37:48'),
 (18, 'Notice', '1698849483.webp', '2023-11-01 08:38:03', '2023-11-01 08:38:03'),
-(19, 'Important Link', '1698849496.webp', '2023-11-01 08:38:16', '2023-11-01 08:38:16'),
+(19, 'ImportantLink', '1698849496.webp', '2023-11-01 08:38:16', '2023-11-01 08:38:16'),
 (20, 'Contact', '1698849509.webp', '2023-11-01 08:38:29', '2023-11-01 08:38:29');
 
 -- --------------------------------------------------------
@@ -134,8 +142,8 @@ INSERT INTO `content_management` (`id`, `title`, `image`, `created_at`, `updated
 
 CREATE TABLE `content_management_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` longtext NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `content_management_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -196,11 +204,11 @@ INSERT INTO `content_management_details` (`id`, `title`, `description`, `content
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -212,8 +220,8 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `gallery_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gallery_type_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -237,7 +245,7 @@ INSERT INTO `gallery_details` (`id`, `title`, `image`, `gallery_type_id`, `creat
 
 CREATE TABLE `gallery_types` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -258,13 +266,13 @@ INSERT INTO `gallery_types` (`id`, `title`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `member_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `contact` varchar(255) NOT NULL,
-  `description` longtext NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `member_type_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -278,10 +286,7 @@ INSERT INTO `member_details` (`id`, `name`, `email`, `designation`, `address`, `
 (1, 'Rahul Orobash', 'emailmuktagcha@gmail.com', 'Governing Member', 'muktagacha', '098765432', '<p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>', '1699113582.jpeg', 2, NULL, '2023-11-04 09:59:42'),
 (3, 'Larry Harrison', 'johndoe@gmail.com', 'Headmaster', 'Attanibazer', '0170026895', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid.</p>', '1699109305.jpg', 1, '2023-10-26 09:31:59', '2023-11-04 08:48:25'),
 (5, 'Abdul Motin', 'motin@gmail.com', 'Bangla Teacher', 'Masjid road, Muktagacha', '0123134567', '<p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>', '1699108877.avif', 4, '2023-11-04 08:41:17', '2023-11-04 08:41:17'),
-(6, 'Haris Jamal', 'haris@gmail.com', 'Secretary', 'College Road', '01893284765', '<p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>', '1699109056.jpg', 3, '2023-11-04 08:44:16', '2023-11-04 08:44:16'),
-(7, 'prohor', 'prohor@gmail.com', 'ceo', 'Nouakhali', '01756983258', '<p>Mui Nokhailla</p>', '1700142116.jpg', 3, '2023-11-16 07:41:56', '2023-11-16 07:41:56'),
-(8, 'John Doe', 'johndoe@gmail.com', 'PROJECT CO-ORDINATION', 'Attanibazer', '01746985232', '<p>Fhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsaisFhhusndjhsa SNDSjjksnkdniusahdiunsdlkm Vihuihdihasiu VJHDshdsdisgdushdsais</p>', '1700142542.jpg', 2, '2023-11-16 07:49:02', '2023-11-16 07:49:02'),
-(9, 'John Doe B', 'jondoe@gmail.com', 'COO', 'Collage Road', '01475323225', '<p>IT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the bandIT is the band</p>', '1702466919.jpg', 2, '2023-11-16 07:50:29', '2023-12-13 05:28:39');
+(6, 'Haris Jamal', 'haris@gmail.com', 'Secretary', 'College Road', '01893284765', '<p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>', '1699109056.jpg', 3, '2023-11-04 08:44:16', '2023-11-04 08:44:16');
 
 -- --------------------------------------------------------
 
@@ -291,7 +296,7 @@ INSERT INTO `member_details` (`id`, `name`, `email`, `designation`, `address`, `
 
 CREATE TABLE `member_types` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -314,7 +319,7 @@ INSERT INTO `member_types` (`id`, `title`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -336,7 +341,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2023_10_11_230621_create_gallery_types_table', 8),
 (14, '2023_10_11_230847_create_gallery_details_table', 9),
 (15, '2023_10_12_074259_create_academic_user_views_table', 10),
-(16, '2023_11_04_182940_create_communications_table', 11);
+(16, '2023_11_04_182940_create_communications_table', 11),
+(17, '2024_02_29_112739_add_institute_to_users_table', 12),
+(19, '2024_02_29_113925_create_admin_details_table', 13);
 
 -- --------------------------------------------------------
 
@@ -345,8 +352,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -358,11 +365,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -372,72 +379,28 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student_registration`
---
-
-CREATE TABLE `student_registration` (
-  `student_registration_id` int(25) NOT NULL,
-  `student_access_id` varchar(255) NOT NULL,
-  `student_access_password` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `contact` int(25) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `addmission_class` varchar(255) NOT NULL,
-  `addmission_date` date NOT NULL,
-  `father_name` varchar(255) NOT NULL,
-  `mother_name` varchar(255) NOT NULL,
-  `student_user_image` varchar(255) NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_registration`
---
-
-CREATE TABLE `teacher_registration` (
-  `teacher_registration_id` int(25) NOT NULL,
-  `teacher_access_id` varchar(255) NOT NULL,
-  `teacher_access_password` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `contact` int(25) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `joining_date` date NOT NULL,
-  `teacher_user_image` varchar(255) NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` tinyint(4) NOT NULL DEFAULT 1 COMMENT '1=admin, 2=teacher, 3=student',
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `institute` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$Zl9QPGqneDNAcSFilrg1a.cR.spAAdDzJDTC8.aM/EyyPF/fGoqbq', 1, 'YWnJrrmZiRPAOFmfvOIvXNfiHlNDzt5689BnfVRdcX4XTOEDWm9wrdiDrPrU', '2023-10-09 14:53:27', '2023-10-09 14:53:32');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`, `institute`) VALUES
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$Zl9QPGqneDNAcSFilrg1a.cR.spAAdDzJDTC8.aM/EyyPF/fGoqbq', 1, 'NB4QZMoVETNa0ocgIYGNJH3leBaFOWR77zfQ02L3dbW72z6zLQfeeDaZo1oK', '2023-10-09 14:53:27', '2023-10-09 14:53:32', 'Nabarun Bidyaniketon');
 
 -- --------------------------------------------------------
 
@@ -447,8 +410,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 
 CREATE TABLE `utiles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` longtext DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -475,6 +438,13 @@ INSERT INTO `utiles` (`id`, `title`, `description`, `created_at`, `updated_at`) 
 --
 ALTER TABLE `academic_user_views`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `admin_details`
+--
+ALTER TABLE `admin_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `admin_details_user_id_foreign` (`user_id`);
 
 --
 -- Indexes for table `communications`
@@ -572,6 +542,12 @@ ALTER TABLE `academic_user_views`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `admin_details`
+--
+ALTER TABLE `admin_details`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `communications`
 --
 ALTER TABLE `communications`
@@ -611,7 +587,7 @@ ALTER TABLE `gallery_types`
 -- AUTO_INCREMENT for table `member_details`
 --
 ALTER TABLE `member_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `member_types`
@@ -623,7 +599,7 @@ ALTER TABLE `member_types`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -646,6 +622,12 @@ ALTER TABLE `utiles`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `admin_details`
+--
+ALTER TABLE `admin_details`
+  ADD CONSTRAINT `admin_details_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `content_management_details`

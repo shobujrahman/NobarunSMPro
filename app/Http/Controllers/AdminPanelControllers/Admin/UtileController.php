@@ -108,8 +108,4 @@ class UtileController extends Controller
         return redirect('/admin/notice/index')->with('success', 'Notice deleted successfully');
     }
 
-    public function communicationindex()
-    {
-        return view('admin.communication.index');
-    }
 }
