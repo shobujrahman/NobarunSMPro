@@ -68,8 +68,9 @@ $notices = \App\Models\Utile::latest()->take(3)->pluck('title')->implode(' | ');
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access</a>
                     <ul class="dropdown-menu">
                         <li><a href="{{('/admin/login')}}">Admin Access</a></li>
-                        <li><a href="{{('/teacher/login')}}">Teacher Access</a></li>
-                        <li><a href="{{('/student/login')}}">Student Access</a></li>
+                        <li><a href="#">System Access</a></li>
+                        {{-- <li><a href="{{('/teacher/login')}}">Teacher Access</a></li> --}}
+                        {{-- <li><a href="{{('/student/login')}}">Student Access</a></li> --}}
 
                     </ul>
                 </li>
