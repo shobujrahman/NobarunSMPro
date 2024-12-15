@@ -245,62 +245,7 @@
                             </ul>
                         </li>
 
-                        <!-- Access Management -->
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">manage_accounts</i>
-                                <span>Access Management</span>
-                            </a>
-                            <ul class="ml-menu">
 
-
-                                <li>
-                                    <a href="{{ ('/admin/teacheraccess/index') }}">
-                                        <i class="material-icons">accessible</i>
-                                        <span>Teacher Access</span>
-                                    </a>
-
-                                </li>
-
-                                <li>
-                                    <a href="{{ ('/admin/studentaccess/index') }}">
-                                        <i class="material-icons">accessibility</i>
-                                        <span>Student Access</span>
-                                    </a>
-
-                                </li>
-
-
-
-                            </ul>
-                        </li>
-
-                        <!-- File Management -->
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">file_open</i>
-                                <span>File Management</span>
-                            </a>
-                            <ul class="ml-menu">
-
-
-                                <li>
-                                    <a href="../teacheraccess/index.php">
-                                        <i class="material-icons">bolt</i>
-                                        <span>Results Management</span>
-                                    </a>
-
-                                </li>
-
-                                <li>
-                                    <a href="../studentaccess/index.php">
-                                        <i class="material-icons">token</i>
-                                        <span>Admission Management</span>
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </li>
 
                     </ul>
                 </div>
